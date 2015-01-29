@@ -1,17 +1,7 @@
 <?php
 /**
- * Your theme's custom functions go here
+ * Child theme's custom functions go here
  */
-
-/**
- * This simple function is used in `tests/test-functions.php` to demonstrate
- * how to write a simple unit test.
- *
- * @see "tests/test-functions.php"
- */
-function your_theme_hello_world() {
-	return "Hello World!";
-}
 
 /**
  * Register a custom homepage layout
@@ -19,8 +9,8 @@ function your_theme_hello_world() {
  * @see "homepages/layouts/your_homepage_layout.php"
  */
 function register_custom_homepage_layout() {
-	include_once __DIR__ . '/homepages/layouts/your_homepage_layout.php';
-	register_homepage_layout('YourHomepageLayout');
+	include_once __DIR__ . '/homepages/layouts/ctmirrorview.php';
+	register_homepage_layout('CTMirrorView');
 }
 add_action('init', 'register_custom_homepage_layout', 0);
 
@@ -34,18 +24,18 @@ function register_custom_widget() {
 	include_once __DIR__ . '/inc/widgets/your_simple_widget.php';
 	register_widget('your_simple_widget');
 }
-add_action('widgets_init', 'register_custom_widget', 1);
+// add_action('widgets_init', 'register_custom_widget', 1);
 
 /**
- * Include your theme's javascript
+ * Include CT Mirror theme's javascript
  *
- * @see "js/your_theme.js"
+ * @see "js/ctmirror.js"
  */
 function enqueue_custom_script() {
 	$version = '0.1.0';
 	wp_enqueue_script(
 		'your_theme',
-		get_stylesheet_directory() . '/js/your_theme.js',
+		get_stylesheet_directory() . '/js/ctmirror.js',
 		array('jquery'),
 		$version,
 		true

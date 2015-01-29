@@ -14,7 +14,7 @@ module.exports = function(grunt) {
                 },
                 files: {
                     'css/style.css': 'less/style.less',
-                    'homepages/assets/css/your_homepage.css': 'homepages/assets/less/your_homepage.less'
+                    'homepages/assets/css/ctmirror.css': 'homepages/assets/less/ctmirror.less'
                 }
             }
         },
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
 
         pot: {
             options: {
-                text_domain: 'your_theme_domain',
+                text_domain: 'ctmirror',
                 dest: 'lang/',
                 keywords: [ //WordPress localization functions
                     '__:1',
