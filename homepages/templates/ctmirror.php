@@ -1,6 +1,6 @@
 <div id="content-main" class="span8">
 	<?php
-	get_template_part('partials/home-topstories');
+	get_template_part('partials/home-topstory');
 
 	get_template_part('partials/home-post-list');
 	?>
