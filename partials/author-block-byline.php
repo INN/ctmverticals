@@ -24,6 +24,8 @@ if ( function_exists( 'get_coauthors' ) && !isset( $values['largo_byline_text'] 
 				$photo = get_the_post_thumbnail( $author->ID, array( 96,96 ) );
 				$photo = str_replace( 'attachment-96x96 wp-post-image', 'avatar avatar-96 photo', $photo );
 				$photo = '<figure class="photo">' . $photo . '</figure>';
+			} else {
+				$photo = '';
 			}
 
 			// Build byline
