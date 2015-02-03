@@ -100,6 +100,22 @@ function ctmirror_largo_before_comments() {
 add_action( 'largo_before_comments', 'ctmirror_largo_before_comments', 11 );
 
 /**
+ * Add arbitrary HTML custom field after hero
+ * When used in conjunction with Largo's "Override display of featured image for this post?",
+ *    effectively replaces with hero image with arbitrary markup. (E.g. iframe)
+ */
+function ctmirror_largo_after_hero() {
+	$hero_html = get_post_meta( get_the_ID(), 'hero_html', true );
+	// check if the custom field has a value
+	if( ! empty( $hero_html ) ) {
+		echo '<div class="after-hero">' . $hero_html . '</div>';
+	}
+}
+add_action( 'largo_after_hero', 'ctmirror_largo_after_hero', 11 );
+
+
+
+/**
  * Load up all of the other goodies from the /inc directory
  */
 $includes = array();
