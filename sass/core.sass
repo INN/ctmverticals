@@ -1,38 +1,38 @@
 @charset "UTF-8"
+
 @import compass
 @import normalize
 @import susy
 @import scut
 
 // color variables
-$white:			#fff
-$black:			#000
-$red:			#cc3300
-$blue:			#2275bb
-$orange:		#f89406
-$turquoise:		#3d9999
-$gray:			#a6a6a6
+$white: white
+$black: black
+$red: #cc3300
+$blue: #2275bb
+$orange: #f89406
+$turquoise: #3d9999
+$gray: #a6a6a6
 
 // font variables
-$title:			'Open Sans Condensed', sans-serif
+$title: "Open Sans Condensed", sans-serif
 
 // Mixins
 =button
-	@include border-radius(4px)
-	@include background-clip(padding-box)
-	background-color: #fff
-	@include background-image(linear-gradient(bottom, #a52713 0%, #cf3119 100%))
-	border: 0
-	color: $white
-	font: 
-		family: $title
-		weight: 600
+  +border-radius(4px)
+  +background-clip(padding-box)
+  background-color: white
+  +background-image(linear-gradient(bottom, #a52713 0%, #cf3119 100%))
+  border: 0
+  color: $white
+  font:
+    family: $title
+    weight: 600
 
 // Imports
-@import "compass/typography/text/replacement"
+@import compass/typography/text/replacement
 @import header
 @import footer
-
 
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700)
 
@@ -571,6 +571,8 @@ h1.branding a
   letter-spacing: 0.1px
   font-weight: 100
 
+.article-bottom .author-box .widgettitle .fn a
+
 .article-bottom .author-box p
   font-family: "Lato", Arial, sans-serif !important
   font-size: 16px !important
@@ -735,4 +737,3 @@ p.wp-caption-text
   color: $main-color
   border-bottom: 1px solid #ccc
   font-style: normal !important
-
