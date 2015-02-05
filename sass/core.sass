@@ -40,16 +40,14 @@ $title: "Open Sans Condensed", sans-serif
 
 @import url(http://fonts.googleapis.com/css?family=Fenix:300,400,700)
 
-/* 
- *Variables
+/*Variables
  *---------------------------------------------------------------------------
 
 $main-color: #30373b
-$highlight-color: #66d4ed
+$highlight-color: #c7bca9
 $breakpoint1: 768px
 
-/* 
- *Mixins
+/*Mixins
  *---------------------------------------------------------------------------
 
 =hed-text
@@ -115,13 +113,32 @@ body #page
   background: none !important
 
 .homepage-topstory
-  border-bottom: 1px solid #ccc
+  border-bottom: 1px solid #cccccc
 
 h1.entry-title, h2.entry-title a
   +hed-text
   color: $main-color
   margin-bottom: 20px
   margin-top: 2px
+  position: relative
+  font-size: 34px !important
+
+.by-author::before
+  width: 100px
+  float: left
+  height: 100px
+  border-bottom: 1px solid black
+  padding: 10px 0
+
+.page h1.entry-title
+  margin-top: 50px
+  text-align: left
+  font-weight: 100
+
+h2.entry-title a
+  font-size: 36px
+  margin-bottom: 12px
+  line-height: 1
 
 span.post-category-link a
   +kicker-text
@@ -140,6 +157,9 @@ span.post-category-link a
   @media screen and (max-width: $breakpoint1)
     width: 100%
     margin-top: 10px
+
+.homepage-medium
+  padding: 50px 0 30px !important
 
 .homepage-medium header .hero
   float: right
@@ -184,6 +204,9 @@ span.post-category-link a
   padding: 0
   margin: 0
 
+.single-post .hero.is-image
+  margin-bottom: 20px
+
 .homepage-small .with-hero
   float: left
   width: 100% !important
@@ -193,8 +216,20 @@ span.post-category-link a
 
 .entry-content p
   +body-text
-  font-size: 16px
-  margin-bottom: 12px
+  font-size: 14px !important
+  line-height: 1.75em !important
+  max-width: 600px
+  margin-bottom: 25px
+
+.entry-content p:first-child:first-letter
+  float: left
+  color: $main-color
+  font-size: 75px
+  line-height: 60px
+  padding-top: 8px
+  padding-right: 10px
+  padding-left: 3px
+  font-weight: 100
 
 h5.top-tag
   margin-top: 25px
@@ -210,7 +245,9 @@ h5.top-tag
 
 h5.byline span.by-author
   +kicker-text
+  position: relative
   color: $main-color
+  display: none
 
 .homepage-medium h5.top-tag, .homepage-small h5.top-tag
   margin-top: 0 !important
@@ -223,14 +260,28 @@ h5.byline span.by-author
   width: 100%
   text-align: center
   font-family: Lato, Arial, sans-serif
-  color: #aaa
+  color: #aaaaaa
   margin-bottom: 20px
   margin-top: 5px
 
 #content-main
-  float: right
-  width: 75% !important
-  padding: 0 0px 0 20px
+  float: left
+  width: 76% !important
+  padding: 0 40px 0 0px
+  margin-bottom: 85px
+  color: black
+  margin-top: 0px
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  @media screen and (max-width: $breakpoint1)
+    width: 100% !important
+    padding: 10px
+
+.single-post #content, .category #content, .author #content
+  width: 76% !important
+  float: left
+  padding: 0 40px 0 0px
   margin-bottom: 85px
   color: black
   margin-top: 0px
@@ -243,14 +294,14 @@ h5.byline span.by-author
 
 #rail, #sidebar
   position: relative
-  float: left
-  width: 24%
+  float: right
+  width: 22%
   margin-left: 0 !important
   height: 100%
   min-height: 90px
   padding-top: 0px
   position: static
-  background: #30373B
+  background: $main-color
   padding-bottom: 100px
   -webkit-box-sizing: border-box
   -moz-box-sizing: border-box
@@ -261,18 +312,34 @@ h5.byline span.by-author
   -ms-transition: all 100ms linear
   transition: all 100ms linear
   @media screen and (max-width: $breakpoint1)
-    width: 100%
+    width: 100% !important
 
 #sidebar
-  float: left
-  width: 31%
-
-.author #content, .single-post #content, .page #content
   float: right
+  width: 22%
+  @media screen and (max-width: $breakpoint1)
+    width: 100% !important
+
+.author #content, .single-post #content, .page #content, .category #author, .search #content
+  float: left
+  @media screen and (max-width: $breakpoint1)
+    padding-top: 40px !important
+    width: 100%
 
 .widget + .widget
-  border-top: #fff 10px solid
+  border-top: white 1px solid
   padding: 35px 0
+
+#text-2
+  background: white
+
+#text-2 .widget-links a
+  color: $main-color !important
+  font-size: 28px
+  line-height: 30px
+  font-family: "Lato"
+  font-weight: 100
+  padding: 21px !important
 
 .widget ul
   list-style-type: none
@@ -284,7 +351,7 @@ h5.byline span.by-author
   width: 50%
   float: left
   margin: 10px 25%
-  border-bottom: 1px solid #fff
+  border-bottom: 1px solid white
 
 h3.widgettitle
   +kicker-text
@@ -301,16 +368,27 @@ h3.widgettitle
 .navbar.open .nav-shelf:after
   background-image: none !important
 
+// .navbar .nav {
+//     width: auto;
+//     left: 50%;
+//     top: 0;
+//     margin-left: -175px;
+//     position: absolute;
+//     display: block;
+//     text-align: center;
+//     @media screen and (max-width: $breakpoint1) {
+//         background: $main-color;
+//     }
+// }
 .navbar .nav
   width: auto
-  left: 50%
+  right: 0%
+  left: auto
   top: 0
-  margin-left: -175px
+  margin-left: 0px
   position: absolute
   display: block
   text-align: center
-  @media screen and (max-width: $breakpoint1)
-    background: $main-color
 
 .navbar li
   width: auto
@@ -328,75 +406,137 @@ h3.widgettitle
   color: black !important
 
 .tagline
-  font-size: 18px !important
+  font-size: 15px !important
+  color: #968a74 !important
+  margin-top: 73px
   float: left
   width: 100%
-  text-align: center
-  margin-bottom: 20px
+  text-align: left
+  margin-bottom: 0px
   position: absolute
   left: 0
-  bottom: 15px
-  font-family: "Fenix", "Times", "Serif"
+  z-index: 100
+  top: 100%
+  text-transform: uppercase
+  font-family: "Lato", "Times", "Serif"
+  @media screen and (max-width: $breakpoint1)
+    bottom: 0px
+    height: 40px
+    margin-top: 24px !important
+    padding-right: 10px
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    border-bottom: 1px solid #ededed
+  @media screen and (max-width: 500px)
+    border-bottom: 1px solid #ededed
 
-h1.branding a
+h1.branding a, h2.branding a
   width: 100%
   float: left
   position: relative
-  height: 170px
-  margin-top: 0
-  @media screen and (max-width: $breakpoint1)
-    height: 137px
+  height: 61px
+  margin: 55px 0 20px !important
+  // @media screen and (max-width: $breakpoint1) {
+  //     margin-top: 50px;
+  //     height: 95px;
+  // }
 
+// .branding > a > span[itemprop~="name"] {
+//     width: 364.86486486px;
+//     position: absolute;
+//     left: 50%;
+//     margin-left: -182.43243243px;
+//     height: 90px;
+//     background-size: cover;
+//     @media screen and (max-width: $breakpoint1) {
+//         width: 243.03797466px;
+//         height: 60px;
+//         margin-left: -121.51898733px;
+//         margin-top: 30px;
+//     }
+// }
 .branding > a > span[itemprop~="name"]
-  width: 450px
-  position: absolute
-  left: 50%
-  margin-left: -225px
-  height: 111px
+  width: 486.48649px
+  left: 0%
+  float: left
+  margin-left: 0
+  height: 120px
   background-size: cover
   @media screen and (max-width: $breakpoint1)
-    width: 320px
-    height: 79px
-    margin-left: -160px
+    width: 202.7027px
+    height: 50px
+    margin-top: 30px
 
 .global-nav-bg
-  background-color: #30373B
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  background-color: white
+  z-index: 99999999
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1) !important
+
+.global-nav
+  @media screen and (max-width: $breakpoint1)
+    background-color: white !important
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1) !important
 
 #text-2 h3.widgettitle
   font-size: 0px !important
   color: rgba(0, 0, 0, 0) !important
 
 #text-2 .widgettitle::before
-  content: url(http://projects.ctmirror.org/vertical-assets/trend-icon-white.png)
-  display: block
+  content: "What is TrendCT?"
+  width: 100%
+  background-image: url(http://projects.ctmirror.org/vertical-assets/newhaven.png)
+  display: block !important
+  background-size: cover
+  background-repeat: no-repeat
+  float: left
   margin: 0 auto
+  padding: 20px
   opacity: 1
-  height: 150px
-  transform: scale(0.3)
+  margin-left: 0%
+  margin-top: -21px
+  height: 227px
+  margin-bottom: -38px
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  transform: scale(1)
+  -webkit-filter: grayscale(80%)
+  filter: grayscale(80%)
+  filter: gray
+  filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale")
 
 .nav-right #header-social .icon-rss, .nav-right #header-social .icon-twitter, .nav-right #header-social .icon-facebook
   background-color: rgba(0, 0, 0, 0) !important
+  color: $main-color
+
+.nav-right #header-social .icon-rss:hover, .nav-right #header-social .icon-twitter:hover, .nav-right #header-social .icon-facebook:hover
+  color: $highlight-color !important
 
 #header-search input
   height: 18px
   padding: 6px 4px 2px
   border-radius: 0px
-  border: 1px solid #aaa
+  border: 1px solid #aaaaaa
   font-family: "Lato"
 
 .btn
-  border: 1px solid #aaa !important
-  border-color: #aaa !important
+  border: 1px solid #aaaaaa !important
+  border-color: #aaaaaa !important
   font-weight: bold !important
   text-shadow: none !important
   font-family: "Lato"
-  background-color: #fff
+  background-color: white
   -webkit-box-sizing: border-box
   -moz-box-sizing: border-box
   box-sizing: border-box
 
 .btn.btn-navbar
-  border: 0px solid #aaa !important
+  border: 0px solid #aaaaaa !important
 
 .sticky-nav-holder
   position: fixed
@@ -406,7 +546,7 @@ h1.branding a
   z-index: 99998
   visibility: hidden
   opacity: 0
-  background-color: #ffffff
+  background-color: white
   -webkit-box-shadow: none !important
   -moz-box-shadow: none !important
   box-shadow: none !important
@@ -421,7 +561,7 @@ h1.branding a
   background: linear-gradient(to bottom, #30373b 0%, #18171c 100%)
 
 .sticky-nav-holder.show .nav li a, .icon-search, .sticky-nav-holder.show .icon-rss, .sticky-nav-holder.show .icon-facebook, .sticky-nav-holder.show .icon-twitter
-  color: white !important
+  color: $main-color !important
   font-weight: 400
 
 .nav li
@@ -433,7 +573,7 @@ h1.branding a
   @media screen and (max-width: $breakpoint1)
     padding: 14px 0 !important
     margin: 0 !important
-    border-top: 1px solid #555
+    border-top: 1px solid #555555
 
 .sticky-nav-holder.show .nav
   left: 0
@@ -449,9 +589,6 @@ h1.branding a
 .btn.btn-navbar
   background: none !important
 
-.home #site-header
-  display: block !important
-
 .pager .load-more a
   text-transform: uppercase
   text-align: center
@@ -461,14 +598,14 @@ h1.branding a
   font-family: "Lato"
   width: 180px
   margin-top: 25px
-  border: 1px solid #ccc
+  border: 1px solid #cccccc
 
 .pager .load-more a:hover
-  background: #ddd
+  background: #dddddd
   text-decoration: underline
 
 .footer-bg
-  background-color: #fff
+  background-color: white
   border-top: 4px double $main-color
   color: $main-color
   +hed-text
@@ -493,7 +630,7 @@ h1.branding a
   font-weight: bold
 
 .post-lead img
-  border: 1px solid #ccc
+  border: 1px solid #cccccc
   padding: 0
 
 .post-lead a
@@ -512,7 +649,7 @@ h1.branding a
   color: $highlight-color
 
 .stories article
-  border-bottom: 1px solid #ccc
+  border-bottom: 1px solid #cccccc
   padding: 34px 0
   margin: 0
 
@@ -529,17 +666,23 @@ h1.branding a
   width: 100%
   margin-bottom: 15px
 
-.single-post #site-header, .author #site-header, .page #site-header, #site-header
-  height: 188px
-  width: 100%
-  margin-top: 50px
-  left: 0
-  position: relative
+#site-header
+  height: 148px !important
+  width: 100% !important
+  margin-top: 20px !important
+  position: relative !important
   @media screen and (max-width: $breakpoint1)
-    height: 148px
+    height: 148px !important
+    margin-bottom: 57px
+  @media screen and (max-width: $breakpoint1)
+    margin-bottom: 50px
 
 .photo img
   border: none !important
+
+.single-post .image
+  clear: both
+  margin-top: 20px
 
 .author-box
   padding-bottom: 14px
@@ -547,17 +690,17 @@ h1.branding a
   -webkit-box-sizing: border-box
   -moz-box-sizing: border-box
   box-sizing: border-box
+  background: none !important
 
 .article-bottom .author-box
   border: none !important
-  padding: 20px !important
+  padding: 30px 0 !important
   -webkit-box-sizing: border-box
   -moz-box-sizing: border-box
   box-sizing: border-box
-  background: #eeeeee
-  border-bottom: 20px solid #fff !important
   float: left
   width: 100%
+  max-width: 600px
 
 .article-bottom img
   display: none !important
@@ -570,13 +713,12 @@ h1.branding a
   text-transform: none !important
   letter-spacing: 0.1px
   font-weight: 100
-
-.article-bottom .author-box .widgettitle .fn a
+  text-align: left
 
 .article-bottom .author-box p
   font-family: "Lato", Arial, sans-serif !important
   font-size: 16px !important
-  color: #444
+  color: #444444
   font-weight: 100
 
 .commentHeader
@@ -603,13 +745,13 @@ i.icon-mail
 
 .navbar .btn-navbar
   margin: 8px 0
-  padding: 8px 10px
+  padding: 4px 10px
 
 article:last-child
   border-bottom: none !important
 
 .post-social
-  border: none !important
+  border-bottom: 1px solid #dddddd !important
 
 .byline-block
   float: right
@@ -622,8 +764,8 @@ article:last-child
   @media screen and (max-width: 500px)
     width: 100%
     padding: 20px
-    border-bottom: 1px solid #ccc
-    border-left: 0px solid #ccc
+    border-bottom: 1px solid #cccccc
+    border-left: 0px solid #cccccc
     margin-bottom: 30px
 
 .byline-block .author
@@ -654,28 +796,45 @@ h2.byline-org, h3.byline-title
   @media screen and (max-width: 1250px)
     max-width: 100%
 
+.single-post .entry-content h5, .single-post .entry-content h5 strong
+  font-size: 28px !important
+  font-family: "Lato", Arial, sans-serif !important
+  font-weight: 300 !important
+  margin-top: 20px
+  float: left
+  width: 100%
+  line-height: 1.2em
+  @media screen and (max-width: 1250px)
+    font-size: 23px !important
+    font-weight: 400 !important
+
+.single-post .entry-content:after
+  content: "♦ ♦ ♦"
+  width: 100%
+  text-align: center
+  margin-left: 7px
+
 .single-post p iframe, .after-hero iframe
   float: left
   width: 100%
   min-width: 804px
   margin: 20px 0 20px
-  border-bottom: 1px solid #ccc
-  border-top: 1px solid #ccc
+  border-bottom: 1px solid #cccccc
+  border-top: 1px solid #cccccc
   @media screen and (max-width: 1250px)
     min-width: 100%
 
 .after-hero iframe
-  border-top: 0px solid #000
+  border-top: 0px solid black
 
-/*
- *blockquote
+/*blockquote
 
 blockquote, .single-post p img
   float: right
   margin-right: -50px
   width: 400px
   padding: 20px
-  border-left: 1px solid #ccc
+  border-left: 1px solid #cccccc
   background: none !important
   margin-left: 20px
   font-size: 22px
@@ -690,9 +849,9 @@ blockquote, .single-post p img
     width: 260px
   @media screen and (max-width: 600px)
     width: 100%
-    border-left: 0px solid #000
-    border-bottom: 1px solid #ccc
-    border-top: 1px solid #ccc
+    border-left: 0px solid black
+    border-bottom: 1px solid #cccccc
+    border-top: 1px solid #cccccc
     margin: 20px 0
     padding: 20px 0
 
@@ -704,9 +863,9 @@ blockquote, .single-post p img
     width: 260px
   @media screen and (max-width: 600px)
     width: 100%
-    border-left: 0px solid #000
-    border-bottom: 1px solid #ccc
-    border-top: 1px solid #ccc
+    border-left: 0px solid black
+    border-bottom: 1px solid #cccccc
+    border-top: 1px solid #cccccc
     margin: 20px 0
     padding: 20px 0
 
@@ -719,8 +878,7 @@ blockquote, .single-post p img
 .pullquoteTitle
   font-size: 13px
 
-/*
- *Captions
+/*Captions
 
 p.wp-media-credit
   font-size: 14px !important
@@ -735,7 +893,7 @@ p.wp-caption-text
   padding-bottom: 3px
   margin-bottom: 30px
   color: $main-color
-  border-bottom: 1px solid #ccc
+  border-bottom: 1px solid #cccccc
   font-style: normal !important
 
 .sticky-footer-holder.show
@@ -756,7 +914,7 @@ p.wp-caption-text
   -webkit-box-sizing: border-box
   -moz-box-sizing: border-box
   box-sizing: border-box
-  background: #eee
+  background: #eeeeee
 
 .secondary-featured-post .type-post a
   color: $main-color !important
@@ -766,7 +924,7 @@ p.wp-caption-text
   box-sizing: border-box
 
 .secondary-featured-post .has-post-thumbnail
-  background: #fff
+  background: white
 
 .secondary-featured-post .has-post-thumbnail a
   color: $main-color !important
@@ -784,8 +942,14 @@ p.wp-caption-text
   margin-top: 30px
   font-weight: 400
 
+h3.recent-posts
+  border-bottom: 1px solid #ededed !important
+
 h3.recent-posts a.rss-link
   color: $main-color
+
+.search-term
+  background: #faf6d9 !important
 
 .form-search
   position: relative
@@ -810,3 +974,112 @@ h3.recent-posts a.rss-link
 .search-submit:hover
   border: 1px solid #4d90fe !important
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) !important
+
+.nav-shelf, .nav
+  @media screen and (max-width: $breakpoint1)
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+
+.visible-phone
+  display: none !important
+
+.menu-item
+  @media screen and (max-width: $breakpoint1)
+    float: left
+    width: 100%
+    // background: $main-color !important;
+
+.navbar .nav
+  margin-top: -25px
+  @media screen and (max-width: 900px)
+    margin-top: 2px
+  @media screen and (max-width: $breakpoint1)
+    position: relative
+    left: 0
+    bottom: 0
+    width: 100%
+    margin-left: 0px
+    margin-top: 0px
+
+.navbar-inner
+  margin-top: 42px
+  background-color: white
+  border: none !important
+  @media screen and (max-width: $breakpoint1)
+    position: fixed
+    margin-top: 0px
+    top: 0 !important
+    margin-top: 0 !important
+    left: 0
+    width: 100%
+    background-color: white
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1) !important
+
+.navbar .nav-shelf
+  @media screen and (max-width: $breakpoint1)
+    top: 112%
+    left: 0px
+    right: 0px
+
+.navbar-inner .container
+  width: 100%
+  float: left
+  border-bottom: 1px solid #dedede
+  @media screen and (max-width: $breakpoint1)
+    border-bottom: 0px solid #dedede
+  padding-bottom: 6px
+
+.navbar li
+  @media screen and (max-width: $breakpoint1)
+    width: 100% !important
+    margin: 0 !important
+
+.navbar li a
+  @media screen and (max-width: $breakpoint1)
+    background: white !important
+    color: $main-color !important
+    width: 100%
+    float: left
+    border-top: none !important
+    border-bottom: 1px solid #cccccc
+    margin-left: 0 !important
+    text-align: center
+    padding: 8px 0 !important
+    font-weight: 300
+    font-family: "Fenix"
+    font-size: 19px !important
+    -webkit-touch-callout: none
+    -webkit-user-select: none
+    -khtml-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+
+.navbar li:last-child a
+  @media screen and (max-width: $breakpoint1)
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1) !important
+
+#main-nav
+  display: block !important
+  margin-top: -80px
+  z-index: -1
+  @media screen and (max-width: $breakpoint1)
+    margin-top: 0px
+    z-index: 1000000
+
+.icon-bar
+  background-color: $main-color !important
+
+#menu-contributors li::after, .largo-recent-posts li::after
+  content: " "
+  width: 20%
+  margin: 0 31% 0 39%
+  border-bottom: 1px solid $highlight-color
+  float: left
+  text-align: center
+  color: white
+
+#menu-contributors li:last-child::after, .largo-recent-posts li:last-child::after
+  opacity: 0
