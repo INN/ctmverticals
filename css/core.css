@@ -1285,3 +1285,107 @@ p.wp-caption-text {
   border-bottom: 1px solid #ccc;
   font-style: normal !important;
 }
+
+/* line 741, ../sass/core.sass */
+.sticky-footer-holder.show {
+  display: none !important;
+}
+
+/* line 744, ../sass/core.sass */
+.category .page-title {
+  font-family: "Fenix";
+  text-align: center;
+  float: left;
+  width: 100%;
+  color: #30373b;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 2px;
+}
+
+/* line 751, ../sass/core.sass */
+.related-topics h5 {
+  font-family: "Lato";
+}
+
+/* line 754, ../sass/core.sass */
+.secondary-featured-post .type-post {
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #eee;
+}
+
+/* line 761, ../sass/core.sass */
+.secondary-featured-post .type-post a {
+  color: #30373b !important;
+  padding: 25px 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 768, ../sass/core.sass */
+.secondary-featured-post .has-post-thumbnail {
+  background: #fff;
+}
+
+/* line 771, ../sass/core.sass */
+.secondary-featured-post .has-post-thumbnail a {
+  color: #30373b !important;
+  padding: 0px 0;
+}
+
+/* line 775, ../sass/core.sass */
+.secondary-featured-post img {
+  transform: scale(0.6);
+  margin-bottom: -10px;
+}
+
+/* line 779, ../sass/core.sass */
+.search .recent-posts {
+  font-family: "Lato", Arial;
+  font-size: 20px;
+  padding-bottom: 15px;
+  border-top: none !important;
+  margin-top: 30px;
+  font-weight: 400;
+}
+
+/* line 787, ../sass/core.sass */
+h3.recent-posts a.rss-link {
+  color: #30373b;
+}
+
+/* line 790, ../sass/core.sass */
+.form-search {
+  position: relative;
+}
+
+/* line 793, ../sass/core.sass */
+.search-results .searchbox {
+  width: 100%;
+  padding-right: 47px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 800, ../sass/core.sass */
+.search-submit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #ededed;
+  color: black;
+  font-size: 13px;
+  padding: 6px 20px 7px;
+  border-radius: 3px;
+}
+
+/* line 810, ../sass/core.sass */
+.search-submit:hover {
+  border: 1px solid #4d90fe !important;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) !important;
+}
