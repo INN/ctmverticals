@@ -86,3 +86,26 @@ function term_slug_or_name_to_id ( $needle, $taxonomy ) {
 	}
 	return $term_id;
 }
+
+
+/**
+ * var_dump() a variable to a file
+ *
+ * @param string $file Full path to file. Recommend: preg_replace('/\.php$/', '', __FILE__) . '-' . __FUNCTION__ . '.log'
+ * @param string $var PHP content to var_dump
+ * @param boolean $append TRUE to append to the file, false otherwise
+ */
+function fvar_dump($file,$var,$append=TRUE) {
+	// Get var_dump output
+	ob_start();
+	var_dump($var);
+	$str_var_dump = ob_get_clean();
+
+	// Set file_put_contents flags
+	$flags = 0;
+	if ( $append ) {
+		$flags = $flags | FILE_APPEND;
+	}
+
+	file_put_contents($file, $str_var_dump, $flags);
+}
