@@ -144,7 +144,15 @@ h1.entry-title, h2.entry-title a
 .home .entry-title a
   font-size: 23px !important
   font-weight: bold
-  margin-bottom: 10px !important
+  margin-bottom: 20px !important
+
+.home .homepage-small .entry-title a
+  @media screen and (max-width: $breakpoint1)
+    margin-top: 25px
+
+.home .homepage-big .entry-title a
+  @media screen and (max-width: $breakpoint1)
+    margin-top: 35px
 
 h1.entry-title:hover, h2.entry-title a:hover
   text-decoration: none
@@ -201,6 +209,8 @@ span.post-category-link a
 
 .homepage-medium
   padding: 50px 0 30px !important
+  @media screen and (max-width: $breakpoint1)
+    padding: 0px 0 30px !important
 
 .homepage-medium header .hero
   float: right
@@ -276,21 +286,22 @@ span.post-category-link a
   position: absolute
   top: 20px
   width: 100%
-  text-align: right !important
+  text-align: left !important
   border-bottom: 1px solid $border-color
   left: 0
   @media screen and (max-width: $breakpoint1)
-    padding-top: 25px
+    margin-top: 25px
+    top: -20px
 
 .home .homepage-big h5.top-tag
   margin-top: 0px
   top: 4px
   width: 100%
-  text-align: right !important
+  text-align: left !important
   left: 0
   text-align: left
   @media screen and (max-width: $breakpoint1)
-    padding-top: 25px
+    padding-top: 0px
 
 .home .homepage-big .entry-date, .home .homepage-big .entry-date.updated
   top: 0 !important
@@ -298,7 +309,7 @@ span.post-category-link a
 h5.top-tag
   margin-top: 25px
   width: 100%
-  text-align: right !important
+  text-align: left !important
   left: 0
   text-align: left
   @media screen and (max-width: $breakpoint1)
@@ -307,13 +318,12 @@ h5.top-tag
 .post-category-link, .post-category-link a
   float: left
   width: 100% !important
-  text-align: right !important
+  text-align: left !important
 
 .home article .top-tag a
-  text-align: right !important
-  float: right
+  text-align: left !important
   width: auto !important
-  float: right !important
+  float: left !important
 
 article .top-tag a
   float: left !important
@@ -354,23 +364,26 @@ h5.byline span.by-author
 .home .entry-date, .home .entry-date.updated
   +kicker-text
   font-weight: 400
-  float: left
-  color: $red !important
+  float: right
+  color: $border-color-dark !important
   width: auto
-  text-align: left
+  text-align: right
   margin-bottom: 20px
   margin-top: 5px
 
 .entry-date, .entry-date.updated
   width: 100%
+  +kicker-text
+  text-align: left
+  margin-bottom: 20px
 
 .home .entry-date, .home .entry-date.updated
   position: absolute
   top: 18px
   font-size: 13px !important
-  left: 0
+  right: 0
   @media screen and (max-width: $breakpoint1)
-    top: 42px
+    top: 0px
 
 .single-post #content, .category #content, .author #content, #content-main
   width: 75% !important
@@ -480,23 +493,23 @@ h5.byline span.by-author
   padding-bottom: 3px
 
 .largo-recent-posts li:first-child:before
-  content: "1\a✺"
+  content: "1\a♦"
   +trendingNums
 
 .largo-recent-posts li:nth-child(2):before
-  content: "2\a✺✺"
+  content: "2\a♦♦"
   +trendingNums
 
 .largo-recent-posts li:nth-child(3):before
-  content: "3\a✺✺✺"
+  content: "3\a♦♦♦"
   +trendingNums
 
 .largo-recent-posts li:nth-child(4):before
-  content: "4\a✺✺✺✺"
+  content: "4\a♦♦♦♦"
   +trendingNums
 
 .largo-recent-posts li:nth-child(5):before
-  content: "5\a✺✺✺✺✺"
+  content: "5\a♦♦♦♦♦"
   +trendingNums
 
 h3.widgettitle
@@ -844,6 +857,8 @@ h1.branding a, h2.branding a
   margin: 0
   margin-bottom: 2px
   position: relative
+  @media screen and (max-width: $breakpoint1)
+    margin: 20px 0 40px
 
 .stories #content article:first-child
 
