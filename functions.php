@@ -120,36 +120,37 @@ add_action( 'largo_after_hero', 'ctmirror_largo_after_hero', 11 );
  * Modify CT Mirror opinion vertical submission form
  */
 function ctmirror_gform_after_submission( $entry, $form ) {
-	// Get headshot image URL
-	$headshot_url = $entry[ '9' ];
-	// Only resize if a headshot image was submitted
-	if ( $headshot_url ) {
-		// Determine full path to image file
-		$form_id = $entry[ 'form_id' ];
-		$upload_path = GFFormsModel::get_upload_path( $form_id );
-		$upload_url = GFFormsModel::get_upload_url( $form_id );
-		$headshot_path = str_replace( $upload_url, $upload_path, $headshot_url );
-		// Instantiate WP image editor
-		$headshot_editor = wp_get_image_editor( $headshot_path );
-		if ( ! is_wp_error( $headshot_editor )) {
-			// WP image editor multi_resize handles image resizing, filename changing, and saving
-			$headshot_meta = $headshot_editor->multi_resize( array(array(
-				'width'  => 96,
-				'height' => 96,
-				'crop'   => TRUE,
-			)) );
-			// Only update the postmeta if the resize was successful & new filename returned
-			if ( is_array($headshot_meta) && isset($headshot_meta[0]['file']) && $headshot_meta[0]['file'] ) {
-				// Build thumbnail URL
-				$headshot_thumb_url = dirname($headshot_url) . '/' . $headshot_meta[0]['file'];
+	if ( 'Submit an Opinion Piece' == $form['title'] ) {
+		// Get headshot image URL
+		$headshot_url = $entry[ '9' ];
+		// Only resize if a headshot image was submitted
+		if ( $headshot_url ) {
+			// Determine full path to image file
+			$form_id = $entry[ 'form_id' ];
+			$upload_path = GFFormsModel::get_upload_path( $form_id );
+			$upload_url = GFFormsModel::get_upload_url( $form_id );
+			$headshot_path = str_replace( $upload_url, $upload_path, $headshot_url );
+			// Instantiate WP image editor
+			$headshot_editor = wp_get_image_editor( $headshot_path );
+			if ( ! is_wp_error( $headshot_editor )) {
+				// WP image editor multi_resize handles image resizing, filename changing, and saving
+				$headshot_meta = $headshot_editor->multi_resize( array(array(
+					'width'  => 96,
+					'height' => 96,
+					'crop'   => TRUE,
+				)) );
+				// Only update the postmeta if the resize was successful & new filename returned
+				if ( is_array($headshot_meta) && isset($headshot_meta[0]['file']) && $headshot_meta[0]['file'] ) {
+					// Build thumbnail URL
+					$headshot_thumb_url = dirname($headshot_url) . '/' . $headshot_meta[0]['file'];
 
-				// Update ctmirror_byline_image entry & postmeta
-				$entry[ '17' ] = $headshot_thumb_url;
-				$post_id = $entry['post_id'];
-				update_post_meta($post_id, 'ctmirror_byline_image', $headshot_thumb_url );
+					// Update ctmirror_byline_image entry & postmeta
+					$entry[ '17' ] = $headshot_thumb_url;
+					$post_id = $entry['post_id'];
+					update_post_meta($post_id, 'ctmirror_byline_image', $headshot_thumb_url );
+				}
 			}
 		}
-
 	}
 }
 add_action( 'gform_after_submission_1', 'ctmirror_gform_after_submission', 10, 2 );
