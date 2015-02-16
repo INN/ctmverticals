@@ -45,7 +45,8 @@ function enqueue_custom_script() {
 		true
 	);
 	// CSS
-	if ( rand(0,1) ) {
+	// Enqueued CSS selected in Theme Options
+	if ( 'trend' == of_get_option( 'ctmirror_stylesheet' ) ) {
 		// Enqueue styles for Trend CT data vertical
 		$css = 'core-trend.css';
 	} else {
@@ -132,6 +133,36 @@ function ctmirror_largo_after_hero() {
 	}
 }
 add_action( 'largo_after_hero', 'ctmirror_largo_after_hero', 11 );
+
+
+
+/**
+ * Add CT Mirror Theme Options section
+ */
+function ctmirror_largo_options($options) {
+	// CT Mirror Options tab
+	$options[] = array(
+		'name' => __('CT Mirror', 'ctmirror'),
+		'type' => 'heading'
+	);
+
+	// CT Mirror stylesheet (opinion or data vertical)
+	$options[] = array(
+		'desc' 		=> __('CT Mirror vertical stylesheet', 'ctmirror'),
+		'id' 		=> 'ctmirror_stylesheet',
+		'std' 		=> 'trend',
+		'type'		=> 'select',
+		'options' 	=> 	array(
+			'trend'      => __('Trend CT (data vertical)', 'ctmirror'),
+			'viewpoints' => __('CT Viewpoints (opinion vertical)', 'ctmirror'),
+		)
+	);
+
+
+	return $options;
+}
+add_filter( 'largo_options', 'ctmirror_largo_options', 11, 1 );
+
 
 /**
  * Modify CT Mirror opinion vertical submission form
