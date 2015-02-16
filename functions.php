@@ -29,21 +29,39 @@ function register_custom_widget() {
 // add_action('widgets_init', 'register_custom_widget', 1);
 
 /**
- * Include CT Mirror theme's javascript
+ * Include CT Mirror theme's and CSSS
  *
  * @see "js/ctmirror.js"
+ * @see "sass/*"
  */
 function enqueue_custom_script() {
 	$version = '0.1.0';
+	// JavaScript
 	wp_enqueue_script(
-		'your_theme',
+		'ctmirror-js',
 		get_stylesheet_directory_uri() . '/js/ctmirror.js',
 		array('jquery'),
 		$version,
 		true
 	);
+	// CSS
+	// Enqueued CSS selected in Theme Options
+	if ( 'trend' == of_get_option( 'ctmirror_stylesheet' ) ) {
+		// Enqueue styles for Trend CT data vertical
+		$css = 'core-trend.css';
+	} else {
+		// Enqueue styles for CT Viewpoints opinion vertical
+		$css = 'core-viewpoints.css';
+	}
+	wp_enqueue_style(
+		'ctmirror-stylesheet',
+		get_stylesheet_directory_uri() . '/css/' . $css
+	);
+	
+
 }
-add_action('wp_enqueue_scripts', 'enqueue_custom_script');
+// Add action with a low priority, to have CSS load later
+add_action('wp_enqueue_scripts', 'enqueue_custom_script', 50);
 
 /*
  * Renders markup for a page of posts and sends it back over the wire.
@@ -115,6 +133,36 @@ function ctmirror_largo_after_hero() {
 	}
 }
 add_action( 'largo_after_hero', 'ctmirror_largo_after_hero', 11 );
+
+
+
+/**
+ * Add CT Mirror Theme Options section
+ */
+function ctmirror_largo_options($options) {
+	// CT Mirror Options tab
+	$options[] = array(
+		'name' => __('CT Mirror', 'ctmirror'),
+		'type' => 'heading'
+	);
+
+	// CT Mirror stylesheet (opinion or data vertical)
+	$options[] = array(
+		'desc' 		=> __('CT Mirror vertical stylesheet', 'ctmirror'),
+		'id' 		=> 'ctmirror_stylesheet',
+		'std' 		=> 'trend',
+		'type'		=> 'select',
+		'options' 	=> 	array(
+			'trend'      => __('Trend CT (data vertical)', 'ctmirror'),
+			'viewpoints' => __('CT Viewpoints (opinion vertical)', 'ctmirror'),
+		)
+	);
+
+
+	return $options;
+}
+add_filter( 'largo_options', 'ctmirror_largo_options', 11, 1 );
+
 
 /**
  * Modify CT Mirror opinion vertical submission form
