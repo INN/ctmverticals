@@ -1,109 +1,8 @@
-@charset "UTF-8"
-
-@import compass
-@import normalize
-@import susy
-@import scut
-
-// color variables
-$white: white
-$black: black
-$red: #cc3300
-$blue: #2275bb
-$orange: #f89406
-$turquoise: #3d9999
-$gray: #a6a6a6
-
-// font variables
-$title: "Open Sans Condensed", sans-serif
-
-// Mixins
-=button
-  +border-radius(4px)
-  +background-clip(padding-box)
-  background-color: white
-  +background-image(linear-gradient(bottom, #a52713 0%, #cf3119 100%))
-  border: 0
-  color: $white
-  font:
-    family: $title
-    weight: 600
-
-// Imports
-@import compass/typography/text/replacement
-@import header
-@import footer
-
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700)
-
-@import url(http://fonts.googleapis.com/css?family=Merriweather:400,700)
-
-@import url(http://fonts.googleapis.com/css?family=Fenix:400)
-
 /* 
- *Variables
+ * Common SASS for both Trend CT & CT Viewpoints
  *---------------------------------------------------------------------------
+ */
 
-$breakpoint1: 768px
-$main-color: rgba(38, 7, 3, 1)
-$highlight-color: rgba(38, 7, 3, 0.9)
-$border-color: rgba(38, 7, 3, 0.08)
-$border-color-dark: rgba(38, 7, 3, 0.6)
-$red: #cc4545
-$highlightfont: "Fenix"
-
-// $main-color: rgba(81,17,4, 1);
-// $highlight-color: rgba(81,17,4, 0.8);
-// $border-color: rgba(81,17,4, 0.08);
-// $border-color-dark: rgba(81,17,4, 0.6);
-/* 
- *Mixins
- *---------------------------------------------------------------------------
-
-=hed-text
-  font-family: $highlightfont
-  font-weight: bold
-  text-align: left
-  float: left
-  width: 100%
-  font-size: 28px !important
-  color: $main-color
-
-=kicker-text
-  text-align: center
-  float: left
-  width: 100%
-  font-family: "Lato", serif
-  font-weight: 600
-  font-size: 11px !important
-  text-transform: uppercase
-  letter-spacing: 1px
-  color: $border-color-dark !important
-
-=body-text
-  font-family: "Merriweather", "Georgia", "Serif" !important
-  font-size: 13.4px !important
-  line-height: 1.8em !important
-  margin-bottom: 20px
-  font-weight: 400
-  max-width: 650px !important
-
-=sidebar-hed
-  float: left
-  width: 100%
-  font-family: "Lato"
-  font-weight: 400 !important
-  color: $highlight-color
-  margin-bottom: 4px
-  margin-top: 10px
-  text-align: center
-  font-size: 15px
-  line-height: 19px
-  list-style-type: none
-  padding: 10px 14px 10px 0px
-  -webkit-box-sizing: border-box
-  -moz-box-sizing: border-box
-  box-sizing: border-box
 
 .nav-left li.site-name a
   font-family: $highlightfont !important
@@ -477,21 +376,6 @@ h5.byline span.by-author
 .largo-recent-posts li a
   color: $red !important
 
-=trendingNums
-  float: left
-  width: 100px
-  font-family: $highlightfont
-  text-align: center
-  font-size: 17px
-  text-align: center
-  color: $highlight-color
-  margin: 10px 0% -20px
-  padding-left: 50%
-  margin-left: -50px
-  white-space: pre
-  // border-bottom: 1px dotted $border-color-dark;
-  padding-bottom: 3px
-
 .largo-recent-posts li:first-child:before
   content: "1\a♦"
   +trendingNums
@@ -860,9 +744,7 @@ h1.branding a, h2.branding a
   @media screen and (max-width: $breakpoint1)
     margin: 20px 0 40px
 
-.stories #content article:first-child
-
-/* AUTHOR PAGE
+/* AUTHOR PAGE */
 
 .largo-author h1
   +hed-text
@@ -1056,7 +938,8 @@ h2.byline-org, h3.byline-title
   border-top: 0px solid #000
 
 /*
- *blockquote
+ * blockquote
+ */
 
 blockquote, .single-post p img
   float: right
@@ -1108,7 +991,8 @@ blockquote, .single-post p img
   font-size: 13px
 
 /*
- *Captions
+ * Captions
+ */
 
 p.wp-media-credit
   font-size: 14px !important
