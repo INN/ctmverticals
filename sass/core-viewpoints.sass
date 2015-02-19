@@ -5,11 +5,9 @@
 @import susy
 @import scut
 
-
-/* 
- *Variables
+/*Variables
  * ---------------------------------------------------------------------------
- */
+
 // color variables
 $white: white
 $black: black
@@ -43,7 +41,1412 @@ $highlightfont: "Fenix"
 
 @import url(http://fonts.googleapis.com/css?family=Fenix:400)
 
+/*Variables
+ *---------------------------------------------------------------------------
+
+$breakpoint1: 768px
+$colors: rgb(22, 34, 60)
+$main-color: rgba($colors, 1)
+$highlight-color: rgba($colors, 1)
+$border-color: rgba($colors, 0.1)
+$border-color-dark: rgba($colors, 0.7)
+$red: rgb(196, 16, 39)
+$highlightfont: "Lato"
+
 // $main-color: rgba(81,17,4, 1);
 // $highlight-color: rgba(81,17,4, 0.8);
 // $border-color: rgba(81,17,4, 0.08);
 // $border-color-dark: rgba(81,17,4, 0.6);
+/*Mixins
+ *---------------------------------------------------------------------------
+
+=hed-text
+  font-family: $highlightfont
+  font-weight: bold
+  text-align: left
+  float: left
+  width: 100%
+  font-size: 28px !important
+  color: $main-color
+
+=kicker-text
+  text-align: center
+  float: left
+  width: 100%
+  font-family: "Lato", serif
+  font-weight: 600
+  font-size: 11px !important
+  text-transform: uppercase
+  letter-spacing: 1px
+  color: $border-color-dark !important
+
+=body-text
+  font-family: "Merriweather", "Georgia", "Serif" !important
+  font-size: 13.4px !important
+  line-height: 1.8em !important
+  margin-bottom: 20px
+  font-weight: 400
+  max-width: 650px !important
+
+=sidebar-hed
+  float: left
+  width: 100%
+  font-family: "Lato"
+  font-weight: 400 !important
+  color: $highlight-color
+  margin-bottom: 4px
+  margin-top: 10px
+  text-align: center
+  font-size: 15px
+  line-height: 19px
+  list-style-type: none
+  padding: 10px 14px 10px 0px
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+.nav-left li.site-name a
+  font-family: $highlightfont !important
+  font-weight: bold
+  font-size: 16px
+  margin-top: 3px
+
+body #page
+  font-family: "Lato", "Arial"
+  max-width: 1300px
+  margin: 0 auto
+  width: 100%
+  overflow-x: hidden !important
+  -webkit-transition: all 100ms linear
+  -moz-transition: all 100ms linear
+  -o-transition: all 100ms linear
+  -ms-transition: all 100ms linear
+  transition: all 100ms linear
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+.archive .entry-content.with-hero, .home .entry-content.with-hero
+  background: none !important
+
+.home .entry-content
+  padding-left: 0 !important
+
+.homepage-topstory
+  border-bottom: 0px solid $border-color
+
+h1.entry-title, h2.entry-title a
+  +hed-text
+  margin-bottom: 20px
+  margin-top: 2px
+  position: relative
+
+.home .entry-title a
+  font-size: 23px !important
+  font-weight: bold
+  margin-bottom: 20px !important
+
+.home .homepage-small .entry-title a
+  @media screen and (max-width: $breakpoint1)
+    margin-top: 25px
+
+.home .homepage-big .entry-title a
+  @media screen and (max-width: $breakpoint1)
+    margin-top: 35px
+
+h1.entry-title:hover, h2.entry-title a:hover
+  text-decoration: none
+  color: $red
+
+.by-author::before
+  width: 100px
+  float: left
+  height: 100px
+  border-bottom: 1px solid black
+  padding: 10px 0
+
+.page h1.entry-title
+  margin-top: 50px
+  text-align: left
+  font-weight: 100
+
+h2.entry-title a
+  font-size: 36px
+  margin-bottom: 12px
+  line-height: 1
+
+.single .entry-title
+  font-size: 32px !important
+
+span.post-category-link a
+  text-align: right
+  float: left
+  +kicker-text
+  background: $border-color
+  color: $highlight-color !important
+  font-size: 12px !important
+  border: 1px dotted $border-color-dark
+  padding: 1px 2px
+  width: auto
+  margin-bottom: 5px
+
+.home span.post-category-link a
+  float: right
+
+.homepage-big img
+  float: left
+  width: 100%
+
+.homepage-big .entry-content.with-hero
+  margin: -22px 10px 0
+  width: 100% !important
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  @media screen and (max-width: $breakpoint1)
+    width: 100%
+    margin-top: 10px
+
+.homepage-medium
+  padding: 50px 0 30px !important
+  @media screen and (max-width: $breakpoint1)
+    padding: 0px 0 30px !important
+
+.homepage-medium header .hero
+  float: right
+  width: 30%
+  margin-top: 5px
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  @media screen and (max-width: $breakpoint1)
+    width: 100%
+    margin-top: 45px
+
+.homepage-medium .with-hero
+  float: left
+  width: 65% !important
+  margin: -22px 1% 0 0 !important
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  @media screen and (max-width: $breakpoint1)
+    width: 100% !important
+    margin-top: 10px !important
+
+.homepage-small header .hero
+  float: right
+  width: 20%
+  display: none
+  @media screen and (max-width: $breakpoint1)
+    width: 100%
+
+.single-post .hero img
+  float: left
+  width: 100%
+
+.hero img
+  @media screen and (max-width: $breakpoint1)
+    width: 100%
+    max-width: 450px
+
+.single-post .hero
+  padding: 0
+  margin: 0
+
+.single-post .hero.is-image
+  margin-bottom: 20px
+
+.homepage-small .with-hero
+  float: left
+  width: 100% !important
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+.entry-content p
+  +body-text
+  margin-bottom: 25px
+
+.entry-content p:first-child:first-letter
+  float: left
+  color: $main-color
+  font-size: 75px
+  line-height: 60px
+  padding-top: 8px
+  padding-right: 10px
+  padding-left: 3px
+  font-weight: 100
+
+.home h5.top-tag
+  margin-top: 25px
+  position: absolute
+  top: 20px
+  width: 100%
+  text-align: left !important
+  border-bottom: 1px solid $border-color
+  left: 0
+  @media screen and (max-width: $breakpoint1)
+    margin-top: 25px
+    top: -20px
+
+.home .homepage-big h5.top-tag
+  margin-top: 0px
+  top: 4px
+  width: 100%
+  text-align: left !important
+  left: 0
+  text-align: left
+  @media screen and (max-width: $breakpoint1)
+    padding-top: 0px
+
+.home .homepage-big .entry-date, .home .homepage-big .entry-date.updated
+  top: 0 !important
+
+h5.top-tag
+  margin-top: 25px
+  width: 100%
+  text-align: left !important
+  left: 0
+  text-align: left
+  @media screen and (max-width: $breakpoint1)
+    padding-top: 25px
+
+.post-category-link, .post-category-link a
+  float: left
+  width: 100% !important
+  text-align: left !important
+
+.home article .top-tag a
+  text-align: left !important
+  width: auto !important
+  float: left !important
+
+article .top-tag a
+  float: left !important
+  border: none !important
+  background: none !important
+  color: $red !important
+
+.home .entry-content.with-hero
+  margin: -4px 10px 0 0
+  width: 72%
+  @media screen and (max-width: $breakpoint1)
+    width: 100%
+    margin: -22px 0px
+
+.byline a
+  color: $red
+
+h5.byline span.by-author
+  +kicker-text
+  position: relative
+  color: $red
+  text-align: left
+  display: none
+  @media screen and (max-width: 700px)
+    display: block
+    margin-bottom: 10px
+
+.home h5.byline span.by-author
+  display: block !important
+  margin-bottom: 10px !important
+
+.homepage-medium h5.top-tag, .homepage-small h5.top-tag
+  margin-top: 0 !important
+
+.sep
+  display: none !important
+
+.home .entry-date, .home .entry-date.updated
+  +kicker-text
+  font-weight: 400
+  float: right
+  color: $border-color-dark !important
+  width: auto
+  text-align: right
+  margin-bottom: 20px
+  margin-top: 5px
+
+.entry-date, .entry-date.updated
+  width: 100%
+  +kicker-text
+  text-align: left
+  margin-bottom: 20px
+
+.home .entry-date, .home .entry-date.updated
+  position: absolute
+  top: 18px
+  font-size: 13px !important
+  right: 0
+  @media screen and (max-width: $breakpoint1)
+    top: 0px
+
+.single-post #content, .category #content, .author #content, #content-main
+  width: 75% !important
+  float: right
+  padding: 0 0px 0 30px
+  margin-bottom: 85px
+  color: black
+  margin-top: 0px
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  @media screen and (max-width: $breakpoint1)
+    width: 100% !important
+    padding: 10px
+
+#rail, #sidebar
+  position: relative
+  float: left
+  width: 24%
+  margin-left: 0 !important
+  height: 100%
+  padding-right: 30px
+  min-height: 90px
+  padding-top: 0px
+  position: static
+  background: none !important
+  padding-bottom: 100px
+  border-right: 1px solid $border-color
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  -webkit-transition: all 100ms linear
+  -moz-transition: all 100ms linear
+  -o-transition: all 100ms linear
+  -ms-transition: all 100ms linear
+  transition: all 100ms linear
+  @media screen and (max-width: $breakpoint1)
+    width: 100% !important
+
+#sidebar
+  float: left
+  width: 22%
+  @media screen and (max-width: $breakpoint1)
+    width: 100% !important
+
+.author #content, .single-post #content, .page #content, .category #author, .search #content
+  float: right
+  @media screen and (max-width: $breakpoint1)
+    padding-top: 40px !important
+    width: 100%
+
+.widget + .widget
+  border-top: white 40px solid
+  padding: 5px 0 10px
+
+#text-2
+  background: white
+  margin-bottom: 0px
+
+.widget-links a
+  max-height: 100px
+  overflow: hidden
+
+#text-2 .widget-links a
+  color: $main-color !important
+  font-size: 19px
+  line-height: 30px
+  font-family: $highlightfont
+  font-weight: 600
+  padding: 0px !important
+
+.widget ul
+  list-style-type: none
+  margin: 0 !important
+  padding: 12px !important
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  @media screen and (max-width: $breakpoint1)
+    margin-top: 45px !important
+
+.widget-links a, .largo-recent-posts a, .menu-contributors-container a
+  +sidebar-hed
+
+.widget-links a:after, .largo-recent-posts a:after, .menu-contributors-container a:after
+  width: 100%
+  float: left
+  margin: 0px
+  border-bottom: 0px solid white !important
+
+.largo-recent-posts li a
+  color: $red !important
+
+=trendingNums
+  float: left
+  width: 100px
+  font-family: $highlightfont
+  text-align: center
+  font-size: 17px
+  text-align: center
+  color: $highlight-color
+  margin: 10px 0% -20px
+  padding-left: 50%
+  margin-left: -50px
+  white-space: pre
+  // border-bottom: 1px dotted $border-color-dark;
+  padding-bottom: 3px
+
+.largo-recent-posts li:first-child:before
+  content: "1\a♦"
+  +trendingNums
+
+.largo-recent-posts li:nth-child(2):before
+  content: "2\a♦♦"
+  +trendingNums
+
+.largo-recent-posts li:nth-child(3):before
+  content: "3\a♦♦♦"
+  +trendingNums
+
+.largo-recent-posts li:nth-child(4):before
+  content: "4\a♦♦♦♦"
+  +trendingNums
+
+.largo-recent-posts li:nth-child(5):before
+  content: "5\a♦♦♦♦♦"
+  +trendingNums
+
+h3.widgettitle
+  +kicker-text
+  color: white !important
+
+.navbar-inner
+  background: none
+  position: relative
+  height: 37px
+
+.navbar.open .nav-shelf:after
+  background-image: none !important
+
+.navbar .nav
+  width: 100%
+  right: 0%
+  left: auto
+  top: 0
+  margin-left: 0px
+  position: absolute
+  display: block
+  text-align: center
+  @media screen and (max-width: $breakpoint1)
+    width: auto
+
+.menu-item-32, .menu-item-31
+  float: right !important
+
+.navbar li
+  width: auto
+  padding: 4px 15px
+  margin-top: -3px
+
+.navbar li a
+  display: block
+  float: left
+  margin-bottom: 0
+  padding: 8px 0 5px
+  +kicker-text
+  background: none !important
+  color: $highlight-color !important
+
+.tagline
+  pointer-events: none !important
+  font-size: 14px !important
+  color: $border-color-dark !important
+  margin-top: 36px
+  float: left
+  width: 100%
+  text-align: center
+  margin-bottom: 0px
+  position: absolute
+  left: 0
+  z-index: 100
+  top: 100%
+  text-transform: uppercase
+  font-weight: 100
+  font-style: italic
+  font-family: "Lato", "Times", "Serif"
+  @media screen and (max-width: $breakpoint1)
+    bottom: 0px
+    height: 55px
+    margin-top: 24px !important
+    padding-right: 10px
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    border-bottom: 1px dotted $border-color-dark
+  @media screen and (max-width: 500px)
+    border-bottom: 1px dotted $border-color-dark
+    margin-bottom: -2px
+
+h1.branding a, h2.branding a
+  width: 100%
+  float: left
+  position: relative
+  height: 61px
+  margin: 15px 0 20px !important
+  @media screen and (max-width: $breakpoint1)
+    margin-top: 10px !important
+  @media screen and (max-width: 500px)
+    height: 67px
+
+// .branding > a > span[itemprop~="name"] {
+//     width: 364.86486486px;
+//     position: absolute;
+//     left: 50%;
+//     margin-left: -182.43243243px;
+//     height: 90px;
+//     background-size: cover;
+//     @media screen and (max-width: $breakpoint1) {
+//         width: 243.03797466px;
+//         height: 60px;
+//         margin-left: -121.51898733px;
+//         margin-top: 30px;
+//     }
+// }
+.branding > a > span[itemprop~="name"]
+  width: 324px
+  left: 0%
+  padding-left: 50%
+  margin-left: -162px
+  float: left
+  height: 80px
+  background-size: 324px 80px
+  background-position: right
+  @media screen and (max-width: $breakpoint1)
+    width: 203px
+    height: 50px
+    margin-top: 30px
+    margin-left: -101.5px
+    background-size: 203px 50px
+
+.branding > a > span[itemprop~="name"]:hover
+  opacity: 0.8
+
+.global-nav-bg
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  background-color: white
+  z-index: 99999999
+  box-shadow: 1px 1px 5px -2px $border-color-dark !important
+
+.global-nav
+  @media screen and (max-width: $breakpoint1)
+    background-color: white !important
+    box-shadow: 1px 1px 4px $border-color !important
+
+#text-2 h3.widgettitle
+  font-size: 11px !important
+  color: $main-color !important
+
+#text-3
+  margin-top: 0px
+  background: white !important
+
+#text-3 h3.widgettitle
+  color: $main-color !important
+
+#text-2 .widgettitle::before
+  content: ""
+  width: 100%
+  background-image: none !important
+  display: block !important
+  background-size: cover
+  background-repeat: no-repeat
+  float: left
+  margin: 0 auto
+  padding: 20px
+  opacity: 1
+  margin-left: 0%
+  margin-top: -21px
+  height: auto
+  margin-bottom: -38px
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  transform: scale(1)
+  -webkit-filter: grayscale(80%)
+  filter: grayscale(80%)
+  filter: gray
+  filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale")
+
+.nav-right #header-social .icon-rss, .nav-right #header-social .icon-twitter, .nav-right #header-social .icon-facebook
+  background-color: rgba(0, 0, 0, 0) !important
+  color: $highlight-color !important
+
+.nav-right #header-social .icon-rss:hover, .nav-right #header-social .icon-twitter:hover, .nav-right #header-social .icon-facebook:hover
+  color: $red !important
+
+#header-search input
+  height: 18px
+  padding: 6px 4px 2px
+  border-radius: 0px
+  border: 1px solid $border-color
+  font-family: "Lato"
+
+.btn
+  border: 1px solid $border-color !important
+  border-color: $border-color !important
+  font-weight: bold !important
+  text-shadow: none !important
+  font-family: "Lato"
+  background-color: white
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+.btn.btn-navbar
+  border: 0px solid $border-color !important
+
+.sticky-nav-holder
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: 99998
+  visibility: hidden
+  opacity: 0
+  background-color: white
+  -webkit-box-shadow: none !important
+  -moz-box-shadow: none !important
+  box-shadow: none !important
+
+.sticky-nav-holder.show
+  background: #30373b
+  background: -moz-linear-gradient(top, #30373b 0%, #18171c 100%)
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #30373b), color-stop(100%, #18171c))
+  background: -webkit-linear-gradient(top, #30373b 0%, #18171c 100%)
+  background: -o-linear-gradient(top, #30373b 0%, #18171c 100%)
+  background: -ms-linear-gradient(top, #30373b 0%, #18171c 100%)
+  background: linear-gradient(to bottom, #30373b 0%, #18171c 100%)
+
+.sticky-nav-holder.show .nav li a, .icon-search, .sticky-nav-holder.show .icon-rss, .sticky-nav-holder.show .icon-facebook, .sticky-nav-holder.show .icon-twitter
+  color: $main-color !important
+  font-weight: 400
+
+.nav li
+  @media screen and (max-width: $breakpoint1)
+    width: 100%
+    padding: 0
+
+.nav li a
+  @media screen and (max-width: $breakpoint1)
+    padding: 14px 0 !important
+    margin: 0 !important
+    border-top: 1px solid $border-color
+
+.sticky-nav-holder.show .nav
+  left: 0
+  margin-left: 0
+  width: auto
+  @media screen and (max-width: $breakpoint1)
+    width: 100%
+    padding: 0
+
+.nav-left li.site-name a
+  color: white !important
+
+.btn.btn-navbar
+  background: none !important
+
+.pager .load-more a
+  text-transform: uppercase
+  text-align: center
+  background: $border-color
+  color: $main-color
+  border-radius: 1px
+  font-family: "Lato"
+  width: 180px
+  margin-top: 25px
+  border: 1px solid $border-color-dark
+
+.pager .load-more a:hover
+  background: #dddddd
+  color: $highlight-color
+  text-decoration: underline
+
+.footer-bg
+  background-color: white
+  border-top: 4px double $border-color-dark
+  color: $main-color
+  +hed-text
+  text-align: left
+
+#supplementary ul.menu li
+  border-bottom: none
+
+#supplementary
+  border-bottom: 2px solid $border-color-dark !important
+
+.menu-item a
+  color: $main-color
+  font-family: $highlightfont
+  font-weight: bold
+  font-size: 18px
+  border: none
+
+#site-footer .widgettitle, #site-footer li.menu-label
+  border-bottom: none
+  text-align: left
+
+#site-footer .menu-item a
+  font-size: 15px !important
+
+.post-lead
+  overflow: visible
+  position: relative
+  width: 100%
+
+.post-lead h5 a, #menu-contributors a
+  +sidebar-hed
+  color: $red
+  font-weight: bold
+  margin-bottom: -20px
+  border: none !important
+  padding: 20px 0 9px !important
+  font-size: 16px !important
+  font-weight: 100
+
+#site-footer .post-lead h5 a
+  color: $main-color
+
+.post-lead img
+  border: 0px solid $border-color
+  padding: 0
+  width: 100%
+  top: 0
+  left: 0
+  -webkit-filter: sepia(20%)
+  -webkit-filter: grayscale(90%)
+  filter: sepia(20%)
+  filter: grayscale(90%)
+  // filter: contrast(10%);
+  // -webkit-filter: contrast(10%);
+  // -webkit-filter: brightness(1);
+  // filter: brightness(1);
+  filter: gray
+  filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale")
+
+.post-lead img:hover
+  -webkit-filter: grayscale(0%)
+  filter: grayscale(0%)
+  filter: none
+  filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale")
+
+.post-lead a
+  padding: 0 20px !important
+
+#boilerplate .footer-credit, #boilerplate .copyright
+  color: $main-color !important
+  font-family: $highlightfont !important
+  font-weight: 400 !important
+  font-size: 16px
+
+#boilerplate
+  border-top: none !important
+
+.stories article
+  border-bottom: 0px solid $border-color !important
+  padding: 34px 0
+  margin: 0
+  margin-bottom: 2px
+  position: relative
+  @media screen and (max-width: $breakpoint1)
+    margin: 20px 0 40px
+
+.stories #content article:first-child
+
+/* AUTHOR PAGE
+
+.largo-author h1
+  +hed-text
+  text-align: left
+  font-size: 37px
+  float: left
+  width: 100%
+  margin-bottom: 15px
+
+#site-header
+  height: 148px !important
+  width: 100% !important
+  margin-top: 40px !important
+  position: static !important
+  display: block !important
+  @media screen and (max-width: $breakpoint1)
+    height: 148px !important
+    margin-bottom: 57px
+  @media screen and (max-width: $breakpoint1)
+    margin-bottom: 0px
+
+#site-header::before
+  box-shadow: inset 0 -10px 61px 12px white
+  content: ""
+  position: absolute
+  z-index: 0
+  background: url(http://projects.ctmirror.org/vertical-assets/wide.svg)
+  background-size: cover
+  background-repeat: no-repeat
+  width: 100%
+  height: 160px
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  opacity: 0.1
+
+.photo img
+  border: none !important
+
+.single-post .image
+  clear: both
+  margin-top: 20px
+
+.author-box
+  padding-bottom: 14px
+  border-bottom: 2px solid $main-color
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  background: none !important
+
+.article-bottom .author-box
+  border: none !important
+  padding: 30px 0 !important
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  float: left
+  width: 100%
+  max-width: 600px
+
+.article-bottom img
+  display: none !important
+
+.article-bottom .author-box .widgettitle
+  // color: rgba(0, 0, 0, 0) !important;
+  font-size: 26px !important
+  color: $main-color !important
+  font-family: $highlightfont, Arial, sans-serif !important
+  text-transform: none !important
+  letter-spacing: 0.1px
+  font-weight: 100
+  text-align: left
+
+.article-bottom .author-box p
+  font-family: "Lato", Arial, sans-serif !important
+  font-size: 16px !important
+  color: $main-color
+  font-weight: 100
+
+.commentHeader
+  font-size: 45px
+  margin-top: 50px
+  font-family: "Lato"
+  font-weight: 300
+  @media screen and (max-width: 700px)
+    font-size: 28px
+
+li.author-posts-link
+  background: none !important
+
+.author-box ul li.author-posts-link a
+  color: $main-color !important
+  font-weight: bold
+  font-size: 13px
+
+i.icon-mail
+  background: none !important
+  color: $main-color !important
+  font-size: 12px
+
+.author-box p
+  +body-text
+
+.navbar .btn-navbar
+  margin: 8px 0
+  padding: 4px 10px
+
+article:last-child
+  border-bottom: none !important
+
+.post-social
+  border-bottom: 1px solid $border-color !important
+  border-top: none !important
+
+.byline-block
+  float: right
+  width: 340px
+  padding: 15px 0 10px 10px
+  margin-left: 10px
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  @media screen and (max-width: 700px)
+    display: none
+    width: 100%
+    padding: 20px
+    border-bottom: 1px solid $border-color
+    border-left: 0px solid $border-color
+    margin-bottom: 30px
+
+.byline-block .author
+  float: left
+  width: 100%
+  margin-bottom: 10px
+  padding-bottom: 10px
+
+figure.photo
+  float: left
+  width: 70px
+  margin: 0 10px 0 0 !important
+
+.single-post h1.byline
+  font-size: 19px
+  font-family: $highlightfont, Times, sans-serif
+  margin-bottom: 5px !important
+
+h2.byline-org, h3.byline-title
+  font-size: 13px
+  font-family: "Lato"
+  font-weight: 300
+
+.single-post .entry-content p
+  max-width: 600px
+  width: 100%
+  color: #333333
+  margin-bottom: 25px
+  @media screen and (max-width: 1250px)
+    max-width: 100%
+
+.single-post .entry-content h5, .single-post .entry-content h5 strong
+  font-size: 28px !important
+  font-family: "Lato", Arial, sans-serif !important
+  font-weight: 300 !important
+  margin-top: 20px
+  float: left
+  width: 100%
+  line-height: 1.2em
+  @media screen and (max-width: 1250px)
+    font-size: 23px !important
+    font-weight: 400 !important
+
+.single-post .entry-content:after
+  content: "✹✹✹"
+  width: 100%
+  text-align: center
+  margin-left: 7px
+
+.single-post p iframe, .after-hero iframe
+  float: left
+  width: 100%
+  min-width: 904px
+  margin: 20px 0 20px
+  border-bottom: 1px solid $border-color
+  border-top: 1px solid $border-color
+  @media screen and (max-width: 1250px)
+    min-width: 100%
+
+.after-hero iframe
+  border-top: 0px solid black
+
+/*blockquote
+
+blockquote, .single-post p img
+  float: right
+  margin-right: -50px
+  width: 400px
+  padding: 20px
+  border-left: 1px solid $border-color
+  background: none !important
+  margin-left: 20px
+  font-size: 22px
+  font-weight: 100
+  font-family: Lato, Arial, sans-serif
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  @media screen and (max-width: 1450px)
+    margin-right: 0px
+  @media screen and (max-width: 1050px)
+    width: 260px
+  @media screen and (max-width: 600px)
+    width: 100%
+    border-left: 0px solid black
+    border-bottom: 1px solid $border-color
+    border-top: 1px solid $border-color
+    margin: 20px 0
+    padding: 20px 0
+
+.single-post p img
+  margin-right: -280px
+  @media screen and (max-width: 1450px)
+    margin-right: 0px
+  @media screen and (max-width: 1050px)
+    width: 260px
+  @media screen and (max-width: 600px)
+    width: 100%
+    border-left: 0px solid black
+    border-bottom: 1px solid $border-color
+    border-top: 1px solid $border-color
+    margin: 20px 0
+    padding: 20px 0
+
+.pullquoteFrom
+  font-weight: bold
+  font-size: 16px
+  margin-top: 20px
+  font-weight: 400
+
+.pullquoteTitle
+  font-size: 13px
+
+/*Captions
+
+p.wp-media-credit
+  font-size: 14px !important
+  font-weight: 300
+  font-family: Lato, Arial, sans-serif
+
+p.wp-caption-text
+  float: left
+  width: 100%
+  font-weight: 400
+  font-size: 16px
+  padding-bottom: 3px
+  margin-bottom: 30px
+  color: $main-color
+  border-bottom: 1px solid $border-color
+  font-style: normal !important
+
+.sticky-footer-holder.show
+  display: none !important
+
+.category .page-title
+  +hed-text
+  color: $main-color
+  text-align: left
+  margin-bottom: 20px
+  margin-top: 2px
+
+.related-topics h5
+  font-family: "Lato"
+
+.secondary-featured-post .type-post
+  padding: 15px
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  background: #eeeeee
+
+.secondary-featured-post .type-post a
+  color: $main-color !important
+  padding: 25px 15px
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+.secondary-featured-post .has-post-thumbnail
+  background: white
+
+.secondary-featured-post .has-post-thumbnail a
+  color: $main-color !important
+  padding: 0px 0
+
+.secondary-featured-post img
+  transform: scale(0.6)
+  margin-bottom: -10px
+
+.search .recent-posts
+  font-family: "Lato", Arial
+  font-size: 20px
+  padding-bottom: 15px
+  border-top: none !important
+  margin-top: 30px
+  font-weight: 400
+
+h3.recent-posts
+  border-bottom: 1px solid $border-color !important
+
+h3.recent-posts a.rss-link
+  color: $main-color
+
+.search-term
+  background: $highlight-color !important
+
+.form-search
+  position: relative
+
+.search-results .searchbox
+  width: 100%
+  padding-right: 47px
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+.search-submit
+  position: absolute
+  right: 0
+  top: 0
+  background: $border-color
+  color: $border-color-dark
+  font-size: 13px
+  padding: 6px 20px 7px
+  border-radius: 3px
+
+.search-submit:hover
+  background: $border-color
+  color: $highlight-color !important
+  border: 1px solid $highlight-color !important
+  box-shadow: 0 1px 1px $border-color !important
+
+.nav-shelf, .nav
+  pointer-events: none
+  @media screen and (max-width: $breakpoint1)
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+
+.visible-phone
+  display: none !important
+
+.menu-item
+  @media screen and (max-width: $breakpoint1)
+    float: left
+    width: 100%
+    // background: $main-color !important;
+
+.navbar .nav
+  margin-top: -25px
+  @media screen and (max-width: 900px)
+    margin-top: 2px
+  @media screen and (max-width: $breakpoint1)
+    position: relative
+    left: 0
+    bottom: 0
+    width: 100%
+    margin-left: 0px
+    margin-top: -6px
+    border-top: 2px solid $border-color !important
+
+.navbar-inner
+  margin-top: 0px
+  border: none !important
+  border-bottom: none !important
+  @media screen and (max-width: $breakpoint1)
+    position: fixed
+    background-color: white
+    margin-top: 0px
+    top: 0 !important
+    margin-top: 0 !important
+    left: 0
+    width: 100%
+    background-color: white
+    box-shadow: 1px 1px 4px $border-color !important
+
+.navbar .nav-shelf
+  @media screen and (max-width: $breakpoint1)
+    top: 112%
+    left: 0px
+    right: 0px
+
+.navbar-inner .container
+  width: 100%
+  float: left
+  border-bottom: 1px solid $highlight-color
+  @media screen and (max-width: $breakpoint1)
+    border-bottom: 0px solid $border-color
+  padding-bottom: 6px
+
+.navbar-inner .container::before
+  content: " "
+  width: 100%
+  border-bottom: 1px dotted $highlight-color
+  padding: 3px 0
+  margin-bottom: -4px
+  float: left
+  @media screen and (max-width: $breakpoint1)
+    border-bottom: 0px dotted $highlight-color
+
+.navbar li
+  @media screen and (max-width: $breakpoint1)
+    width: 100% !important
+    margin: 0 !important
+
+.navbar li a
+  pointer-events: auto
+  @media screen and (max-width: $breakpoint1)
+    background: white !important
+    color: $main-color !important
+    width: 100%
+    float: left
+    border-top: none !important
+    border-bottom: 2px solid $border-color
+    margin-left: 0 !important
+    text-align: center
+    padding: 12px 0 !important
+    font-weight: 500
+    font-family: "Lato"
+    font-size: 14px !important
+    -webkit-touch-callout: none
+    -webkit-user-select: none
+    -khtml-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+
+.navbar li a:hover
+  text-decoration: underline
+
+.navbar li:last-child a
+  @media screen and (max-width: $breakpoint1)
+    box-shadow: 1px 1px 4px $border-color !important
+
+#main-nav
+  display: block !important
+  margin-top: -80px
+  z-index: -1
+  @media screen and (max-width: $breakpoint1)
+    margin-top: 0px
+    z-index: 1000000
+
+.icon-bar
+  background-color: $highlight-color !important
+  color: $highlight-color !important
+
+#menu-contributors li::after, .largo-recent-posts li::after
+  content: " "
+  width: 20%
+  margin: 0 31% 0 36%
+  border-bottom: 0px solid white
+  float: left
+  text-align: center
+  color: white
+
+#menu-contributors li:last-child::after, .largo-recent-posts li:last-child::after
+  opacity: 0
+
+#sidebar h3.widgettitle, #rail h3.widgettitle
+  margin-top: -15px
+  // color: white !important;
+  // background: $border-color-dark;
+  color: $highlight-color !important
+  background: $border-color
+  border: 1px dotted $border-color-dark
+  border-top: 0px solid black
+  padding: 20px 0 10px
+  position: relative
+  overflow: visible
+  max-width: 130px
+  margin-left: 50%
+  left: -60px
+  margin-bottom: 20px
+  -webkit-transition: all 100ms linear
+  -moz-transition: all 100ms linear
+  -o-transition: all 100ms linear
+  -ms-transition: all 100ms linear
+  transition: all 100ms linear
+
+#sidebar h3.widgettitle:hover, #rail h3.widgettitle:hover
+  padding-top: 30px
+  margin-bottom: 10px
+
+#sidebar .widget::before, #rail .widget::before
+  content: " "
+  width: 90%
+  margin-left: 5%
+  float: left
+  height: 2px
+  margin-top: -20px
+  border-bottom: 2px solid $border-color-dark
+  border-top: 1px dotted $border-color-dark
+
+#sidebar h3.widgettitle::after, #rail h3.widgettitle::after
+  content: " "
+  float: left
+  width: 60%
+  position: absolute
+  top: 10px
+  left: 20%
+  padding-top: 10px
+  border-top: 1px solid $border-color-dark
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+.sponsorLogo
+  padding: 14px
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+.edit-link
+  display: none
+
+a img.whatis
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  padding: 10px
+
+.home #main
+  @media screen and (max-width: $breakpoint1)
+    margin-top: 0px !important
+    border-top: 1px solid $border-color-dark
+
+.widget li.cat-item
+  text-align: center
+
+.widget li.cat-item a
+  color: $red
+
+.largo-sidebar-featured .post-lead, .largo-featured .post-lead, .largo-recent-posts .post-lead, .largo-INN-RSS .post-lead
+  overflow: visible
+
+/* After Addition
+
+aside.widget_text li a
+  float: left
+  width: 100%
+  text-align: center !important
+  color: $red !important
+
+img.ologo
+  width: 50%
+  margin: 10px 25%
+
+.branding > a > span[itemprop~="name"]
+  background-image: url(http://projects.ctmirror.org/vertical-assets/viewpoints.png)
+
+.home .entry-title a, h1.entry-title, h2.entry-title a
+  font-size: 23px !important
+  line-height: 27px !important
+  font-weight: bold
+  font-family: "Lato" !important
+
+#site-header::before
+  background: url(http://projects.ctmirror.org/vertical-assets/paper.png) !important
+  background-repeat: repeat !important
+  opacity: 0.9
+
+.menu-item:nth-child(3), .menu-item:nth-child(4)
+  float: right
+
+.nav-left, .sticky-nav-wrapper
+  display: none
+
+h1.branding a, h2.branding a
+  margin-top: 38px !important
+
+#menu-footer-navigation li, #supplementary ul.menu li
+  float: left
+  width: 100%
+
+.archive-background .related-topics
+  font-family: $highlightfont
