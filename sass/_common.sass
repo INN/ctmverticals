@@ -826,13 +826,13 @@ h1.branding a, h2.branding a
   color: $main-color
   font-weight: 100
 
-.commentHeader
-  font-size: 45px
+.ctmirror-comment-title, .commentHeader
+  font-size: 45px !important
   margin-top: 50px
   font-family: "Lato"
   font-weight: 300
   @media screen and (max-width: 700px)
-    font-size: 28px
+    font-size: 28px !important
 
 li.author-posts-link
   background: none !important
@@ -1003,7 +1003,7 @@ p.wp-caption-text
   float: left
   width: 100%
   font-weight: 400
-  font-size: 16px
+  font-size: 13px !important
   padding-bottom: 3px
   margin-bottom: 30px
   color: $main-color
@@ -1294,3 +1294,44 @@ a img.whatis
 
 .largo-sidebar-featured .post-lead, .largo-featured .post-lead, .largo-recent-posts .post-lead, .largo-INN-RSS .post-lead
   overflow: visible
+  
+// Mirror and Trend stream styles
+.srr-title a
+  color: $red
+  float: left
+  width: 100%
+  margin-bottom: 10px
+  font-size: 15px
+  line-height: 20px
+  text-align: center
+
+.srr-item::after
+  content: "*"
+  float: left
+  width: 100%
+  text-align: center
+
+#super_rss_reader-2 .widgettitle, #super_rss_reader-3 .widgettitle
+  display: none
+
+#super_rss_reader-3 .super-rss-reader-widget::before
+  content: ""
+  background: url(http://projects.ctmirror.org/vertical-assets/viewpoints.png)
+  display: block
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: center center
+  width: 60%
+  margin: 20px 20% 30px
+  height: 50px
+
+#super_rss_reader-2 .super-rss-reader-widget::before
+  content: ""
+  background: url(http://ctmirror.org/files/2014/08/ctmirror-88.png)
+  display: block
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: center center
+  width: 60%
+  margin: 20px 20% 30px
+  height: 50px
