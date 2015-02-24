@@ -22,11 +22,12 @@ $gray: #a6a6a6
 $title: "Open Sans Condensed", sans-serif
 
 $breakpoint1: 768px
-$main-color: rgba(38, 7, 3, 1)
-$highlight-color: rgba(38, 7, 3, 0.9)
-$border-color: rgba(38, 7, 3, 0.08)
-$border-color-dark: rgba(38, 7, 3, 0.6)
-$red: #cc4545
+$color: rgb(24, 39, 43)
+$main-color: rgba($color, 1)
+$highlight-color: rgba($color, 0.9)
+$border-color: rgba($color, 0.08)
+$border-color-dark: rgba($color, 0.6)
+$red: #E74C3C
 $highlightfont: "Fenix"
 
 // Imports
@@ -43,7 +44,12 @@ $highlightfont: "Fenix"
 
 @import url(http://fonts.googleapis.com/css?family=Fenix:400)
 
-// $main-color: rgba(81,17,4, 1);
-// $highlight-color: rgba(81,17,4, 0.8);
-// $border-color: rgba(81,17,4, 0.08);
-// $border-color-dark: rgba(81,17,4, 0.6);
+h1.branding a, h2.branding a
+  margin-top: 38px !important
+
+#disqus_thread
+  border-top: 2px solid $border-color !important
+  background: #fff !important
+
+.post-lead h5 a, #menu-contributors a
+  font-family: "Fenix", Georgia, serif
