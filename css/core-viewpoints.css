@@ -1888,7 +1888,7 @@ p.wp-caption-text {
   float: left;
   width: 100%;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 13px !important;
   padding-bottom: 3px;
   margin-bottom: 30px;
   color: #16223c;
@@ -2327,11 +2327,19 @@ a img.whatis {
 }
 
 /* line 1314, ../sass/_common.sass */
+.srr-item:last-child::after {
+  content: "";
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 1320, ../sass/_common.sass */
 #super_rss_reader-2 .widgettitle, #super_rss_reader-3 .widgettitle {
   display: none;
 }
 
-/* line 1317, ../sass/_common.sass */
+/* line 1323, ../sass/_common.sass */
 #super_rss_reader-3 .super-rss-reader-widget::before {
   content: "";
   background: url(http://projects.ctmirror.org/vertical-assets/viewpoints.png);
@@ -2344,7 +2352,7 @@ a img.whatis {
   height: 50px;
 }
 
-/* line 1328, ../sass/_common.sass */
+/* line 1334, ../sass/_common.sass */
 #super_rss_reader-2 .super-rss-reader-widget::before {
   content: "";
   background: url(http://ctmirror.org/files/2014/08/ctmirror-88.png);
@@ -2415,4 +2423,34 @@ h1.branding a, h2.branding a {
 /* line 77, ../sass/core-viewpoints.sass */
 .archive-background .related-topics {
   font-family: "Lato";
+}
+
+/* line 80, ../sass/core-viewpoints.sass */
+h3.gform_title {
+  display: none;
+}
+
+/* line 83, ../sass/core-viewpoints.sass */
+.gfield_description {
+  font-family: "Lato" !important;
+}
+
+/* line 86, ../sass/core-viewpoints.sass */
+.gfield_label {
+  font-family: "Lato" !important;
+  color: #c41027;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* line 92, ../sass/core-viewpoints.sass */
+#super_rss_reader-3 .super-rss-reader-widget::before {
+  background: url(http://projects.ctmirror.org/vertical-assets/trend.png);
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 60%;
+  margin: 20px 20% 30px;
+  height: 50px;
 }
