@@ -696,6 +696,7 @@ h1.branding a, h2.branding a
   padding: 20px 0 9px !important
   font-size: 16px !important
   font-weight: 100
+  font-family: "Lato",Arial,sans-serif
 
 #site-footer .post-lead h5 a
   color: $main-color
@@ -1148,7 +1149,7 @@ h3.recent-posts a.rss-link
   border-bottom: 1px solid $highlight-color
   @media screen and (max-width: $breakpoint1)
     border-bottom: 0px solid $border-color
-  padding-bottom: 6px
+    padding-bottom: 6px
 
 .navbar-inner .container::before
   content: " "
@@ -1341,3 +1342,10 @@ a img.whatis
   width: 60%
   margin: 20px 20% 30px
   height: 50px
+  
+.entry-content ul li, .entry-content ol li
+  font-size: 14px
+  font-family: "Merriweather",Times
+
+.byline .time-ago
+  color: $border-color-dark !important
