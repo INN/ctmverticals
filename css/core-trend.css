@@ -2379,6 +2379,56 @@ a img.whatis {
   padding: 0 !important;
 }
 
+@media print {
+  /* line 2, ../sass/_print.sass */
+  .global-nav-bg,
+  #site-header,
+  #main-nav,
+  #sidebar,
+  .ctmirror-comment-title,
+  .ctmirror-comment-title + p,
+  .fb-comments,
+  .commentHeader,
+  .footer-bg {
+    display: none !important;
+  }
+
+  /* line 13, ../sass/_print.sass */
+  .print-header strong {
+    font-size: 18px;
+  }
+
+  /* line 16, ../sass/_print.sass */
+  #main #content {
+    width: 100% !important;
+    margin-bottom: 0;
+  }
+  /* line 20, ../sass/_print.sass */
+  #main #content h1.entry-title,
+  #main #content .entry-date {
+    float: none;
+  }
+  /* line 24, ../sass/_print.sass */
+  #main #content .entry-content p {
+    max-width: 100% !important;
+  }
+  /* line 27, ../sass/_print.sass */
+  #main #content .byline-block {
+    float: none;
+    width: 100%;
+    padding: 0 0 0 0;
+    margin-left: 0;
+  }
+  /* line 32, ../sass/_print.sass */
+  #main #content .byline-block .byline {
+    font-size: 14px !important;
+  }
+
+  /* line 35, ../sass/_print.sass */
+  .single-post p img {
+    margin-right: 0;
+  }
+}
 /* Site-specific SASS for Trend CT
  *---------------------------------------------------------------------------
  */
