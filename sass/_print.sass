@@ -1,0 +1,36 @@
+@media print
+	.global-nav-bg,
+	#site-header,
+	#main-nav,
+	#sidebar,
+	.ctmirror-comment-title,
+	.ctmirror-comment-title + p,
+	.fb-comments,
+	.commentHeader,
+	.footer-bg
+		display: none !important
+
+	.print-header strong
+		font-size: 18px
+
+	#main #content
+		width: 100% !important
+		margin-bottom: 0
+
+		h1.entry-title,
+		.entry-date
+			float: none
+
+		.entry-content p
+			max-width: 100% !important
+
+		.byline-block
+			float: none
+			width: 100%
+			padding: 0 0 0 0
+			margin-left: 0
+			.byline
+				font-size: 14px !important
+
+	.single-post p img
+		margin-right: 0
