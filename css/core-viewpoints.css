@@ -2378,6 +2378,11 @@ a img.whatis {
   color: rgba(22, 34, 60, 0.7) !important;
 }
 
+/* line 1354, ../sass/_common.sass */
+#menu-footer-navigation, #supplementary ul.menu {
+  padding: 0 !important;
+}
+
 /* line 40, ../sass/core-viewpoints.sass */
 aside.widget_text li a {
   float: left;

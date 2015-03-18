@@ -2374,6 +2374,11 @@ a img.whatis {
   color: rgba(24, 39, 43, 0.6) !important;
 }
 
+/* line 1354, ../sass/_common.sass */
+#menu-footer-navigation, #supplementary ul.menu {
+  padding: 0 !important;
+}
+
 /* Site-specific SASS for Trend CT
  *---------------------------------------------------------------------------
  */
