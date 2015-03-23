@@ -1722,7 +1722,7 @@ figure.photo {
 .single-post h1.byline {
   font-size: 19px;
   font-family: "Lato", Times, sans-serif;
-  margin-bottom: 5px !important;
+  margin: 0 0 5px !important;
 }
 
 /* line 879, ../sass/_common.sass */
