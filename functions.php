@@ -220,6 +220,7 @@ $includes = array();
 $includes[] = '/inc/sidebars.php'; // Configures sidebars
 $includes[] = '/inc/taxonomy_terms.php'; // Configures taxonomy terms
 $includes[] = '/inc/utilities.php'; // Utility functions
+$includes[] = '/inc/widgets.php'; // Widget registration functions
 
 // Perform load
 foreach ( $includes as $include ) {
