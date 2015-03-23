@@ -20,7 +20,13 @@ if ( function_exists( 'get_coauthors' ) && !isset( $values['largo_byline_text'] 
 					$postmeta['ctmirror_byline_image'][0]
 				);
 			} else {
-				$photo = '';
+				// No profile photo URL set, use default profile image
+				// <child theme>/img/default_byline_image.gif
+				$photo = sprintf(
+					'<figure class="photo"><img alt="%s" src="%s" width="96" height="96" class="avatar avatar-96 photo" /></figure>',
+					esc_attr($postmeta['largo_byline_text'][0]) . '. No photo provided.',
+					get_stylesheet_directory_uri() . '/img/default_byline_image.gif'
+				);
 			}
 
 			// Build byline
