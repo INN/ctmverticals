@@ -158,6 +158,15 @@ function ctmirror_largo_options($options) {
 		)
 	);
 
+	$options[] = array(
+		'name' 	=> __('Default Byline Image', 'ctmirror'),
+		'desc' 	=> __('Enter the URL for a default ctmirror_byline_image URL, to be displayed as a 96x96 image in the byline block of articles. If this field is empty, no default image will be displayed.', 'ctmirror'),
+		'id' 	=> 'ctmirror_default_byline_image',
+		'std' 	=> '',
+		'type' 	=> 'text'
+	);
+
+
 
 	return $options;
 }
