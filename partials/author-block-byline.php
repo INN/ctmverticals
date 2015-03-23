@@ -17,7 +17,7 @@ if ( function_exists( 'get_coauthors' ) && !isset( $values['largo_byline_text'] 
 				$photo = sprintf(
 					'<figure class="photo"><img alt="%s" src="%s" width="96" height="96" class="avatar avatar-96 photo" /></figure>',
 					esc_attr($postmeta['largo_byline_text'][0]),
-					$postmeta['ctmirror_byline_image'][0]
+					esc_url($postmeta['ctmirror_byline_image'][0])
 				);
 			} elseif ( of_get_option( 'ctmirror_default_byline_image' ) ) {
 				// No profile photo URL set, use default profile image
@@ -25,7 +25,7 @@ if ( function_exists( 'get_coauthors' ) && !isset( $values['largo_byline_text'] 
 				$photo = sprintf(
 					'<figure class="photo"><img alt="%s" src="%s" width="96" height="96" class="avatar avatar-96 photo" /></figure>',
 					esc_attr($postmeta['largo_byline_text'][0]) . '. No photo provided.',
-					of_get_option( 'ctmirror_default_byline_image' )
+					esc_url(of_get_option( 'ctmirror_default_byline_image' ))
 				);
 			} else {
 				// No postmeta or default byline image. Show nothing.
@@ -43,7 +43,7 @@ if ( function_exists( 'get_coauthors' ) && !isset( $values['largo_byline_text'] 
 			if ( $org ) {
 				$org_markup = sprintf (
 					'<h2 class="byline-org">%s</h2>',
-					$org
+					esc_html($org)
 				);
 			} else {
 				$org_markup = '';
@@ -54,7 +54,7 @@ if ( function_exists( 'get_coauthors' ) && !isset( $values['largo_byline_text'] 
 			if ( $title ) {
 				$title_markup = sprintf (
 					'<h3 class="byline-title">%s</h3>',
-					$title
+					esc_html($title)
 				);
 			} else {
 				$title_markup = '';
