@@ -43,6 +43,7 @@ if ( has_term_or_child( 'homepage-big', 'prominence' ) ) {
 		if ( $featured && ( has_post_thumbnail() || $values['youtube_url'] ) ) {
 	?>
 		<header>
+		<?php echo '<a href="' . get_permalink() . '">'; ?>
 			<div class="hero span12 <?php echo $hero_class; ?>">
 			<?php
 				if ( $youtube_url = $values['youtube_url'][0] ) {
@@ -54,6 +55,7 @@ if ( has_term_or_child( 'homepage-big', 'prominence' ) ) {
 				}
 			?>
 			</div>
+			<?php echo '</a>'; ?>
 		</header>
 	<?php
 		}
