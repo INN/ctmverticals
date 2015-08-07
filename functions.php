@@ -63,38 +63,7 @@ function enqueue_custom_script() {
 // Add action with a low priority, to have CSS load later
 add_action('wp_enqueue_scripts', 'enqueue_custom_script', 50);
 
-/*
- * Renders markup for a page of posts and sends it back over the wire.
- */
-if (!function_exists('largo_load_more_posts')) {
-	function largo_load_more_posts() {
-		$paged = $_POST['paged'];
-		$context = (isset($_POST['query']))? $_POST['query'] : array();
 
-		$args = array_merge(array(
-			'paged' => $paged,
-			'post_status' => 'publish',
-			'posts_per_page' => 10,
-			'ignore_sticky_posts' => true
-		), $context);
-
-		if ( of_get_option('num_posts_home') )
-			// CT Mirror customization. Add 1 to the posts per page, to account for the Top Story.
-			$args['posts_per_page'] = of_get_option('num_posts_home') + 1;
-		if ( of_get_option('cats_home') )
-			$args['cat'] = of_get_option('cats_home');
-		$query = new WP_Query($args);
-
-		if ( $query->have_posts() ) {
-			while ( $query->have_posts() ) : $query->the_post();
-				get_template_part( 'partials/content', 'home' );
-			endwhile;
-		}
-		wp_die();
-	}
-	add_action('wp_ajax_nopriv_load_more_posts', 'largo_load_more_posts');
-	add_action('wp_ajax_load_more_posts', 'largo_load_more_posts');
-}
 
 /**
  * Post-Largo setup initialization
