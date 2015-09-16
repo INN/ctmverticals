@@ -451,7 +451,7 @@ nav.navbar li
   font-weight: 100
   font-style: italic
   font-family: "Lato", "Times", "Serif"
-  padding-bottom: 4px
+  padding-bottom: 5px
   border-bottom: 1px dotted $border-color-dark
   @media screen and (max-width: $breakpoint1)
     bottom: 0px
@@ -1116,14 +1116,15 @@ body #page #main-nav div.navbar-inner
     border-bottom: 0px solid $border-color
 
 .navbar-inner .container::before
-  content: " "
-  width: 100%
-  border-top: 1px solid $highlight-color
-  border-bottom: 1px dotted $highlight-color
-  padding: 3px 0 0 0
-  margin-top: 4px
-  margin-bottom: -4px
-  float: left
+  @media screen and (min-width: $breakpoint1)
+    content: " "
+    width: 100%
+    border-top: 1px solid $highlight-color
+    border-bottom: 1px dotted $highlight-color
+    padding: 3px 0 0 0
+    margin-top: 4px
+    margin-bottom: -4px
+    float: left
   @media screen and (max-width: $breakpoint1)
     border-bottom: 0px dotted $highlight-color
 
