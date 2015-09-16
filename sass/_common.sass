@@ -404,13 +404,13 @@ h3.widgettitle
   width: 100%
   right: 0%
   left: auto
-  top: 0
   margin-left: 0px
-  position: absolute
+  margin-top: -25px
   display: block
   text-align: center
   @media screen and (max-width: $breakpoint1)
     width: auto
+    margin-top: 0
 
 .menu-item-32, .menu-item-31
   float: right !important
@@ -420,7 +420,10 @@ h3.widgettitle
 .navbar li
   width: auto
   padding: 4px 15px
-  margin-top: -3px
+
+// Specifically to override http://projects.ctmirror.org/libs/trend.css
+nav.navbar li
+  margin-top: -18px
 
 .navbar li a
   display: block
@@ -448,6 +451,8 @@ h3.widgettitle
   font-weight: 100
   font-style: italic
   font-family: "Lato", "Times", "Serif"
+  padding-bottom: 4px
+  border-bottom: 1px dotted $border-color-dark
   @media screen and (max-width: $breakpoint1)
     bottom: 0px
     height: 55px
@@ -456,7 +461,6 @@ h3.widgettitle
     -webkit-box-sizing: border-box
     -moz-box-sizing: border-box
     box-sizing: border-box
-    border-bottom: 1px dotted $border-color-dark
   @media screen and (max-width: 500px)
     border-bottom: 1px dotted $border-color-dark
     margin-bottom: -2px
@@ -1077,7 +1081,6 @@ h3.recent-posts a.rss-link
     width: 100%
 
 .navbar .nav
-  margin-top: -25px
   @media screen and (max-width: 900px)
     margin-top: 2px
   @media screen and (max-width: $breakpoint1)
@@ -1091,10 +1094,9 @@ h3.recent-posts a.rss-link
 .navbar-inner
   margin-top: 0px
   border: none !important
-  border-bottom: none !important
+  background-color: #fff
   @media screen and (max-width: $breakpoint1)
     position: fixed
-    background-color: #fff
     margin-top: 0px
     top: 0 !important
     margin-top: 0 !important
@@ -1103,18 +1105,23 @@ h3.recent-posts a.rss-link
     background-color: #fff
     box-shadow: 1px 1px 4px $border-color !important
 
+// Specifically to override http://projects.ctmirror.org/libs/trend.css
+body #page #main-nav div.navbar-inner
+  border-bottom: none !important
+
 .navbar-inner .container
   width: 100%
   float: left
-  border-bottom: 1px solid $highlight-color
   @media screen and (max-width: $breakpoint1)
     border-bottom: 0px solid $border-color
 
 .navbar-inner .container::before
   content: " "
   width: 100%
+  border-top: 1px solid $highlight-color
   border-bottom: 1px dotted $highlight-color
-  padding: 3px 0
+  padding: 3px 0 0 0
+  margin-top: 4px
   margin-bottom: -4px
   float: left
   @media screen and (max-width: $breakpoint1)
@@ -1175,7 +1182,6 @@ h3.recent-posts a.rss-link
   opacity: 0
 
 #sidebar h3.widgettitle, #rail h3.widgettitle
-  margin-top: -15px
   color: $highlight-color !important
   background: $border-color
   border: 1px dotted $border-color-dark
@@ -1203,7 +1209,6 @@ h3.recent-posts a.rss-link
   margin-left: 5%
   float: left
   height: 2px
-  margin-top: -20px
   border-bottom: 2px solid $border-color-dark
   border-top: 1px dotted $border-color-dark
 
