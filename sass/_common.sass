@@ -400,14 +400,6 @@ h3.widgettitle
   +kicker-text
   color: white !important
 
-.navbar-inner
-  background: none
-  position: relative
-  height: 37px
-
-.navbar.open .nav-shelf:after
-  background-image: none !important
-
 .navbar .nav
   width: 100%
   right: 0%
@@ -422,6 +414,8 @@ h3.widgettitle
 
 .menu-item-32, .menu-item-31
   float: right !important
+  @media screen and (max-width: $breakpoint1)
+    float: none !important
 
 .navbar li
   width: auto
@@ -1074,14 +1068,6 @@ h3.recent-posts a.rss-link
   border: 1px solid $highlight-color !important
   box-shadow: 0 1px 1px $border-color !important
 
-.nav-shelf, .nav
-  pointer-events: none
-  @media screen and (max-width: $breakpoint1)
-    position: absolute
-    left: 0
-    bottom: 0
-    width: 100%
-
 .visible-phone
   display: none !important
 
@@ -1100,7 +1086,6 @@ h3.recent-posts a.rss-link
     bottom: 0
     width: 100%
     margin-left: 0px
-    margin-top: -6px
     border-top: 2px solid $border-color !important
 
 .navbar-inner
@@ -1118,19 +1103,12 @@ h3.recent-posts a.rss-link
     background-color: #fff
     box-shadow: 1px 1px 4px $border-color !important
 
-.navbar .nav-shelf
-  @media screen and (max-width: $breakpoint1)
-    top: 112%
-    left: 0px
-    right: 0px
-
 .navbar-inner .container
   width: 100%
   float: left
   border-bottom: 1px solid $highlight-color
   @media screen and (max-width: $breakpoint1)
     border-bottom: 0px solid $border-color
-    padding-bottom: 6px
 
 .navbar-inner .container::before
   content: " "
@@ -1171,10 +1149,6 @@ h3.recent-posts a.rss-link
 
 .navbar li a:hover
   text-decoration: underline
-
-.navbar li:last-child a
-  @media screen and (max-width: $breakpoint1)
-    box-shadow: 1px 1px 4px $border-color !important
 
 #main-nav
   display: block !important
