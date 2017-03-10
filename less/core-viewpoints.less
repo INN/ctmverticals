@@ -1,0 +1,117 @@
+/*Variables
+ * --------------------------------------------------------------------------- */
+
+// color variables
+@white: white;
+@black: black;
+@blue: #2275bb;
+@orange: #f89406;
+@turquoise: #3d9999;
+@gray: #a6a6a6;
+
+// font variables
+@title: "Open Sans Condensed", sans-serif;
+
+@breakpoint1: 768px;
+@main-color: rgba(22, 34, 60, 1);
+@highlight-color: rgba(22, 34, 60, 1);
+@border-color: rgba(22, 34, 60, 0.1);
+@border-color-dark: rgba(22, 34, 60, 0.7);
+@red: rgb(196, 16, 39);
+@highlightfont: "Lato";
+
+// Imports
+/*@import "compass/typography/text/replacement";*/
+@import "_mixins.less";
+@import "_header.less";
+@import "_footer.less";
+@import "_viewpoints.less";
+@import "_common.less";
+
+aside.widget_text li a {
+  float: left;
+  width: 100%;
+  text-align: center !important;
+  color: @red !important;
+}
+
+img.ologo {
+  width: 30%;
+  margin: 10px 35%;
+}
+
+.branding > a > span[itemprop~="name"] {
+  background-image: url(http://projects.ctmirror.org/vertical-assets/viewpoints.png);
+}
+
+.home .entry-title a, h1.entry-title, h2.entry-title a {
+  font-size: 23px !important;
+  line-height: 27px !important;
+  font-weight: bold;
+  font-family: "Lato" !important;
+}
+
+#site-header::before {
+  background: url(http://projects.ctmirror.org/vertical-assets/paper.png) !important;
+  background-repeat: repeat !important;
+  opacity: 0.9;
+}
+
+.menu-item:nth-child(3), .menu-item:nth-child(4) {
+  float: right;
+}
+
+h1.branding a, h2.branding a {
+  margin-top: 38px !important;
+}
+
+#menu-footer-navigation li, #supplementary ul.menu li {
+  float: left;
+  width: 100%;
+}
+
+.archive-background .related-topics {
+  font-family: @highlightfont;
+}
+
+h3.gform_title {
+  display: none;
+}
+
+.gfield_description {
+  font-family: "Lato" !important;
+}
+
+.gfield_label {
+  font-family: "Lato" !important;
+  color: @red;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+#super_rss_reader-3 .super-rss-reader-widget::before {
+  background: url(http://projects.ctmirror.org/vertical-assets/trend.png);
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 60%;
+  margin: 20px 20% 30px;
+  height: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  // for op
+  #site-footer .widget-area.footer-col-5 {
+    float: left;
+    width: 50%;
+    padding-left: 10px;
+    clear: none;
+  }
+
+  #site-footer .widget-area.footer-col-6 {
+    float: left;
+    width: 45%;
+    clear: none;
+  }
+}

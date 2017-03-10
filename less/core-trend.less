@@ -1,0 +1,64 @@
+/*Variables
+ * ---------------------------------------------------------------------------
+ */
+
+// color variables
+@white: white;
+@black: black;
+@blue: #2275bb;
+@orange: #f89406;
+@turquoise: #3d9999;
+@gray: #a6a6a6;
+
+// font variables
+@title: "Open Sans Condensed", sans-serif;
+
+@breakpoint1: 768px;
+@main-color: rgba(24, 39, 43, 1);
+@highlight-color: rgba(24, 39, 43, 0.9);
+@border-color: rgba(24, 39, 43, 0.08);
+@border-color-dark: rgba(24, 39, 43, 0.6);
+@red: #E74C3C;
+@highlightfont: "Fenix";
+
+// Imports
+@import "_mixins.less";
+@import "_header.less";
+@import "_footer.less";
+@import "_common.less";
+@import "_trend.less";
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,700);
+
+@import url(http://fonts.googleapis.com/css?family=Fenix:400);
+
+h1.branding a, h2.branding a {
+  margin-top: 38px !important;
+}
+
+#disqus_thread {
+  border-top: 2px solid @border-color !important;
+  background: #fff !important;
+}
+
+.post-lead h5 a, #menu-contributors a {
+  font-family: "Fenix", Georgia, serif;
+}
+
+@media screen and (max-width: 768px) {
+  // for data
+  #site-footer .widget-area.footer-col-4 {
+    float: left;
+    width: 50%;
+    margin-left: 5%;
+    clear: none;
+  }
+
+  #site-footer .widget-area.footer-col-5 {
+    float: left;
+    width: 45%;
+    clear: none;
+  }
+}
