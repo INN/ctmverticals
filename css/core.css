@@ -1542,7 +1542,7 @@ h1.branding a, h2.branding a {
   content: "";
   position: absolute;
   z-index: 0;
-  background: url(http://projects.ctmirror.org/vertical-assets/wide.svg);
+  background: url(//projects.ctmirror.org/vertical-assets/wide.svg);
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;

@@ -622,7 +622,7 @@ h3.widgeth3 {
 
 #rss-3 ul::before {
     content: "";
-    background: url(http://projects.ctmirror.org/vertical-assets/trend.png);
+    background: url(//projects.ctmirror.org/vertical-assets/trend.png);
     display: block;
     background-size: contain;
     background-repeat: no-repeat;
@@ -634,7 +634,7 @@ h3.widgeth3 {
 
 #rss-3.widget-4 ul::before {
     content: "";
-    background: url(http://projects.ctmirror.org/vertical-assets/viewpoints.png);
+    background: url(//projects.ctmirror.org/vertical-assets/viewpoints.png);
     display: block;
     background-size: contain;
     background-repeat: no-repeat;
@@ -777,18 +777,18 @@ h3.widgeth3 {
 
 .tablesorter th.bothSort::after,
 th.bothSort::after {
-    content: url(http://projects.ctmirror.org/staging/polGuide/bg.gif);
+    content: url(//projects.ctmirror.org/staging/polGuide/bg.gif);
 }
 
 .tablesorter th.upSort::after,
 th.upSort::after {
-    content: url(http://projects.ctmirror.org/staging/polGuide/asc.gif);
+    content: url(//projects.ctmirror.org/staging/polGuide/asc.gif);
     margin-bottom: 5px;
 }
 
 .tablesorter th.downSort::after,
 th.downSort::after {
-    content: url(http://projects.ctmirror.org/staging/polGuide/desc.gif);
+    content: url(//projects.ctmirror.org/staging/polGuide/desc.gif);
 }
 
 img.size-full, img.size-large {
